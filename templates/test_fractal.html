@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8">
+	<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+	<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+	<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+	<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<title>Fractal Tree Creator</title>
+	<meta name="description" content="An app to track your hands/face through the webcam.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico"/>
+		
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css')}}">
+
+	<style type="text/css">
+		html,body { background:#fff; height:100%; margin:0; padding:0; overflow:hidden }
+		canvas { position:absolute; top:0; left:0 }
+		p { position:absolute; left:0; right:0; text-align:center; margin:0; padding:0.5em 5em; background:rgba(240,240,240,0.7) }
+		#head { top:0; border-bottom:1px solid #999; }
+		#foot { bottom:0; font-size:85%; border-top:1px solid #999; font-style:italic; }
+		#fps { position:absolute; right:1em; }
+	</style>
+</head><body>
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<canvas></canvas>
+	<a href="/" class="home-button">Home</a>
+
+    <!-- <div class="controls"> -->
+        <!-- <p>Size:</p> -->
+        <input id="length_slider" class="slider" type="range" min="40" max="150" step="1" value="120" 
+        oninput="update_length(this.value);" onchange="update_length(this.value);">
+
+		<!--<p>Tilt:</p> -->
+        <input id="tilt_slider" class="slider" type="range" min="-45" max="45" step="1" value="0" 
+        oninput="update_tilt(this.value);" onchange="update_tilt(this.value);">
+
+        <!-- <p>Line thickness:</p> -->
+        <input id="width_slider" class="slider" type="range" min="1" max="75" step="1" value="15" 
+        oninput="update_width(this.value);" onchange="update_width(this.value);">
+    <!-- </div> -->
+	
+    <span id="fps"></span>
+	
+	<script type="text/javascript">
+		var ctx = document.querySelector('canvas').getContext('2d'),
+		    fpsout = document.querySelector('#fps');
+
+        var x_coord = 0
+        var y_coord = 200
+        var length = 120
+        var tilt = 0
+        var width = 15
+        
+		resizeCanvas();
+		window.addEventListener('resize', resizeCanvas, false);
+		setInterval(drawFrame, 1000 / 60);
+
+		function resizeCanvas() {
+			var w = document.body.offsetWidth,
+			    h = document.body.offsetHeight;
+			ctx.canvas.width  = w;
+			ctx.canvas.height = h;
+			ctx.translate(w/2,h/2);
+			ctx.strokeStyle = 'red';
+			ctx.fillStyle = 'black';
+			drawFrame();
+		}
+
+		var lastUpdate = new Date, fps=30;
+
+		function drawFrame() {
+			var now = new Date;
+			var dt = (now - lastUpdate) / 1000;
+			if (dt==0 || isNaN(dt)) return;
+				
+			ctx.save();
+			ctx.setTransform(1,0,0,1,0,0);
+			ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
+			ctx.restore();
+			
+			// drawAsteroids();    
+			// drawShip();
+			// moveAsteroids(dt);
+            // create_tree();
+			ctx.save();
+			ctx.fillStyle = "blue";
+			ctx.fillRect(0, 0, ctx.canvas.width/2, ctx.canvas.height/2);
+			ctx.restore();
+
+			lastUpdate = now;
+			fps += (1/dt - fps) / 10;
+		}
+
+        function draw_tree(startX, startY, len, angle, branchWidth) {
+            ctx.lineWidth = branchWidth;
+
+            ctx.beginPath();
+            ctx.save();
+
+            ctx.strokeStyle = "green";
+            ctx.fillStyle = "green";
+
+            ctx.translate(startX, startY);
+            ctx.rotate(angle * Math.PI/180);
+            ctx.moveTo(0, 0);
+            ctx.lineTo(0, -len);
+            ctx.stroke();
+
+            ctx.shadowBlur = 50;
+            ctx.shadowColor = "rgba(0,0,0,0.4)";
+
+            if(len < 10) {
+                ctx.restore();
+                return;
+            }
+
+            draw_tree(0, -len, len*0.8, angle-15, branchWidth*0.8);
+            draw_tree(0, -len, len*0.8, angle+15, branchWidth*0.8);
+
+            ctx.restore();
+        }
+
+        function create_tree() {
+            ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+            //console.log(x_coord, y_coord, length, tilt, width);
+            draw_tree(x_coord, y_coord, length, tilt, width);
+        }
+
+		function update_length(new_length) {
+            length = parseInt(new_length)
+			console.log(length);
+        }
+
+        function update_tilt(new_tilt) {
+            tilt = parseInt(new_tilt)
+        }
+
+        function update_width(new_width) {
+            width = parseInt(new_width)
+        }
+
+		// function drawAsteroids(){
+		// 	for (var i=0,len=asteroids.length; i<len; ++i){
+		// 		var a = asteroids[i], size = a.size;
+		// 		ctx.save();
+		// 		ctx.translate(a.x - size, a.y - size);
+		// 		ctx.rotate(a.angle);
+		// 		ctx.strokeRect(-size, -size, size*2, size*2);
+		// 		ctx.restore();
+		// 	}
+		// }
+
+		setInterval(function(){
+			fpsout.innerHTML = fps.toFixed(1)+"fps";
+		},1000);
+
+	</script>
+</body></html>
+
