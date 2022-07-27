@@ -28,13 +28,9 @@ def MotionTracking():
 def CartPole():
     return render_template('CartPole.html')
 
-@app.route('/fractal')
-def fractal():
-    return render_template('fractal.html')
-
-@app.route('/test_fractal')
-def test_fractal():
-    return render_template('test_fractal.html')
+@app.route('/ArtCanvas')
+def ArtCanvas():
+    return render_template('ArtCanvas.html')
 
 # @app.route("/video_feed")
 # def video_feed():
@@ -109,4 +105,4 @@ def test():
 
 if __name__ == "__main__":
 	# start the flask app
-    app.run(debug=False)
+    app.run(debug=True)

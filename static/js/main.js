@@ -1,7 +1,6 @@
 (function($) {
 
 	"use strict";	
-
   
     $('.navigation').singlePageNav({
         currentClass : 'active'
