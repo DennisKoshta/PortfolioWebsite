@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav{
+    width: 1000px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    opacity: 0.3;
+    transition: opacity .5s;
+}
+.nav:hover{
+    opacity: 1;
+}
+
+/* BLANK */
+/* .blank{
+    height: 15px;
+    width: 15px;
+    opacity: 0
+} */
+
+/* BUTTONS */
+.buttons{
+    display: flex;
+}
+button{
+    border: none;
+    outline: none;
+    padding: .6em 1em;
+    border-radius: 3px;
+    background-color: #03bb56;
+    color: #fff;
+    transition: transform .5s;
+    cursor: pointer;
+}
+button:hover{
+    transform: scale(1.1);
+}
+.save{
+    background-color: #0f65d4;
+    transition: transform .5s;
+}
+.save:hover{
+    transform: scale(1.1);
+}
+
+/* COLOR OPTIONS */
+.colors{
+    display: flex;
+}
+.clr{
+    height: 30px;
+    width: 30px;
+    background-color: blue;
+    border-radius: 50%;
+    border: 3px solid #646464;
+    transition: transform .5s;
+    margin: .1em;
+    cursor: pointer;
+}
+.clr:hover{
+    transform: scale(1.2);
+}
+.clr:nth-child(1){
+    background-color: #FFFFFF;
+}
+.clr:nth-child(2){
+    background-color: #000000;
+}
+.clr:nth-child(3){
+    background-color: #FF0000;
+}
+.clr:nth-child(4){
+    background-color: #FFFF00;
+}
+.clr:nth-child(5){
+    background-color: #00FF00;
+}
+.clr:nth-child(6){
+    background-color: #00FFFF;
+}
+.clr:nth-child(7){
+    background-color: #0000FF;
+}
+.clr:nth-child(8){
+    background-image: url("/static/assets/img/dice.svg");
+    background-color: #04AA6D;
+}
+
+
+/* MODE OPTIONS */
+.modes{
+    display: flex;
+}
+.mode{
+    height: 30px;
+    width: 30px;
+    background-color: blue;
+    border-radius: 50%;
+    border: 3px solid #646464;
+    transition: transform .5s;
+    margin: .1em;
+    cursor: pointer;
+}
+.mode:hover{
+    transform: scale(1.2);
+}
+.mode:nth-child(1){
+    background-image: url("/static/assets/img/pen.svg");
+    background-color: #04AA6D;
+}
+.mode:nth-child(2){
+    background-image: url("/static/assets/img/stamp.svg");
+    background-color: #04AA6D;
+}
+
+/* SLIDER OPTIONS */
+.slidecontainer {
+    width: 20%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 10px; /* Specified height */
+    border-radius: 12px; 
+    background: #646464; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    border-radius: 12px; 
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    border-radius: 12px; 
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
