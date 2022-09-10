@@ -4,3 +4,4 @@ opencv-python
 imutils
 mediapipe
 protobuf==3.20.*
+yahoo_fin
