@@ -1,10 +1,11 @@
+<base target="_blank">
 # Computer Science Major Portfolio
 
 Welcome to my portfolio website! Here you can find my resume, as well as a few projects that demonstrate my skills in software engineering and machine learning. In this repository, you will find the source code and documentation for the website and projects.
 
 ## Website Link
 
-<a href="https://propane-nomad-267903.wl.r.appspot.com/" target="_blank">www.denniskoshta.com</a>
+[www.denniskoshta.com](https://propane-nomad-267903.wl.r.appspot.com/)
 
 ## Contents
 
