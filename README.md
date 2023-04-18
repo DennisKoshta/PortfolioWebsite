@@ -22,7 +22,6 @@ Flask is a lightweight Python web framework that allows for quick and easy devel
 
 - Modular and scalable web application structure
 - RESTful API for easy integration with frontend
-- Simple and efficient template rendering using Jinja2
 
 ### Technologies Used
 
