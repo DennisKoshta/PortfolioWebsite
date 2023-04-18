@@ -2,13 +2,36 @@
 
 Welcome to my portfolio website! Here you can find my resume, as well as a few projects that demonstrate my skills in software engineering and machine learning. In this repository, you will find the source code and documentation for the website and projects.
 
-1. Hand Motion Tracking
-2. Actor Degrees of Separation
-3. JavaScript Drawing Canvas
-4. Flask Web Application
+## Contents
+
+1. Flask Web Application
+2. Project: Hand Motion Tracking
+3. Project: Actor Degrees of Separation
+4. Project: JavaScript Drawing Canvas
 5. Google Cloud (gcloud) Hosting
 
-## 1. Hand Motion Tracking
+## 1. Flask Web Application
+
+Flask is a lightweight Python web framework that allows for quick and easy development of web applications. In this project, I have utilized Flask to create the backend of my portfolio website, handling the routing and serving of pages.
+
+### Features
+
+- Modular and scalable web application structure
+- RESTful API for easy integration with frontend
+- Simple and efficient template rendering using Jinja2
+
+### Technologies Used
+
+- Python
+- Flask
+
+### Files
+
+- main.py
+- app.yaml
+- templates\index.html
+
+## 2. Hand Motion Tracking
 
 This project utilizes the MediaPipe NodeJS package to track and graphically visualize your hands and fingers using your webcam. It's an interesting way to explore computer vision and machine learning capabilities.
 
@@ -22,6 +45,11 @@ This project utilizes the MediaPipe NodeJS package to track and graphically visu
 
 - NodeJS
 - MediaPipe
+
+### Files
+
+- templates\MotionTracking.html
+- static\assets\img\motion_tracking_example.png
 
 ## 2. Actor Degrees of Separation
 
@@ -39,6 +67,10 @@ This C++ program computes the shortest path between two actors in terms of degre
 - BFS Algorithm
 - Adjacency List Data Structure
 
+### Files
+
+- static\assets\Sixdegrees.zip
+
 ## 3. JavaScript Drawing Canvas
 
 A simple canvas to draw and create whatever you desire. This project is made using JavaScript and allows users to unleash their creativity on the web.
@@ -55,20 +87,12 @@ A simple canvas to draw and create whatever you desire. This project is made usi
 - JavaScript
 - HTML5 Canvas
 
-## 4. Flask Web Application
+### Files
 
-Flask is a lightweight Python web framework that allows for quick and easy development of web applications. In this project, I have utilized Flask to create the backend of my portfolio website, handling the routing and serving of pages.
-
-### Features
-
-- Modular and scalable web application structure
-- RESTful API for easy integration with frontend
-- Simple and efficient template rendering using Jinja2
-
-### Technologies Used
-
-- Python
-- Flask
+- templates\ArtCanvas.html
+- static\assets\img\fractal_example.png
+- static\js\ArtCanvas.js
+- static\css\ArtCanvas.css
 
 ## 5. Google Cloud (gcloud) Hosting
 
