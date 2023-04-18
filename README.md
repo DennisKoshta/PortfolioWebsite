@@ -1,4 +1,4 @@
-# Computer Science Major Portfolio
+# My Website Portfolio
 
 Welcome to my portfolio website! Here you can find my resume, as well as a few projects that demonstrate my skills in software engineering and machine learning. In this repository, you will find the source code and documentation for the website and projects.
 
