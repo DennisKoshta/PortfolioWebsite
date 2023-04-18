@@ -1,10 +1,12 @@
 # Computer Science Major Portfolio
 
-Welcome to my portfolio website! Here you can find my resume, as well as a few projects that demonstrate my skills in software engineering and machine learning. In this repository, you will find the source code and documentation for the wesite and projects.
+Welcome to my portfolio website! Here you can find my resume, as well as a few projects that demonstrate my skills in software engineering and machine learning. In this repository, you will find the source code and documentation for the website and projects.
 
 1. Hand Motion Tracking
 2. Actor Degrees of Separation
 3. JavaScript Drawing Canvas
+4. Flask Web Application
+5. Google Cloud (gcloud) Hosting
 
 ## 1. Hand Motion Tracking
 
@@ -52,3 +54,34 @@ A simple canvas to draw and create whatever you desire. This project is made usi
 
 - JavaScript
 - HTML5 Canvas
+
+## 4. Flask Web Application
+
+Flask is a lightweight Python web framework that allows for quick and easy development of web applications. In this project, I have utilized Flask to create the backend of my portfolio website, handling the routing and serving of pages.
+
+### Features
+
+- Modular and scalable web application structure
+- RESTful API for easy integration with frontend
+- Simple and efficient template rendering using Jinja2
+
+### Technologies Used
+
+- Python
+- Flask
+
+## 5. Google Cloud (gcloud) Hosting
+
+Google Cloud Platform (GCP) offers a variety of services for hosting and managing web applications. In this project, I have used GCP's App Engine to deploy and host my portfolio website, providing a scalable and reliable hosting solution.
+
+### Features
+
+- Easy deployment and management of web applications
+- Automatic scaling to handle varying traffic levels
+- Integration with other Google Cloud services for enhanced functionality
+
+### Technologies Used
+
+- Google Cloud Platform (GCP)
+- App Engine
+- gcloud CLI
