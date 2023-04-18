@@ -136,7 +136,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="static/assets/Sixdegrees.zip" download>
+                    <a href="static/assets/Sixdegrees.zip" onclick="return confirmDownload()">
                         <div class="col-md-4 col-sm-6">
                             <div class="project-item">
                                 <img src="/static/assets/img/six_degrees.png" alt="">
@@ -253,7 +253,10 @@
                 document.getElementById('captchaResponse').value = token;
             });
             });
-    </script>
 
+        function confirmDownload() {
+            return confirm("Download the source code file Sixdegrees.zip?");
+        }
+    </script>
 </body>
 </html>
