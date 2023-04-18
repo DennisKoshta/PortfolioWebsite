@@ -20,10 +20,6 @@ def index():
 def MotionTracking():
     return render_template('MotionTracking.html')
 
-@app.route('/CartPole')
-def CartPole():
-    return render_template('CartPole.html')
-
 @app.route('/ArtCanvas')
 def ArtCanvas():
     return render_template('ArtCanvas.html')
