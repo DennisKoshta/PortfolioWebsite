@@ -518,7 +518,8 @@ h3.profile-title {
   padding: 30px;
 }
 .project-hover h5 {
-  font-size: 16px;
+  color: white;
+  font-size: 22px;
   margin-bottom: 15px;
   padding-left: 0px;
 }
@@ -529,7 +530,7 @@ h3.profile-title {
 }
 .project-hover p {
   color: white;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 20px;
 }
 

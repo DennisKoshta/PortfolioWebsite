@@ -125,42 +125,82 @@
                     </div>
                 </div>
                 <div class="row projects-holder">
+
                     <div class="col-md-4 col-sm-6">
                         <div class="project-item">
                             <img src="/static/assets/img/motion_tracking_example.png" alt="">
                             <div class="project-hover">
-                                <div class="inside">
-                                    <h5><a href="{{ url_for('MotionTracking') }}">Hand Motion Tracking</a></h5>
-                                    <p>Using MediaPipe NodeJS packages, tracks and graphically visualizes your hands and fingers using the webcam.</p>
-                                </div>
+                                <a href="{{ url_for('MotionTracking') }}">
+                                    <div class="inside">
+                                        <h5>Hand Motion Tracking</h5>
+                                        <p>Utilizing MediaPipe NodeJS packages, this project provides real-time tracking and graphical visualization of hands and fingers by processing the input from a webcam. 
+                                            The implementation leverages the powerful machine learning models and algorithms provided by the MediaPipe library to accurately identify and track the positions of individual hand landmarks, 
+                                            enabling efficient and precise representation of hand gestures and movements in a visual form. 
+                                            This technology can be applied in a variety of domains, such as computer vision, human-computer interaction, and virtual reality, among others.
+                                        </p>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <a href="static/assets/Sixdegrees.zip" onclick="return confirmDownload()">
-                        <div class="col-md-4 col-sm-6">
-                            <div class="project-item">
-                                <img src="/static/assets/img/six_degrees.png" alt="">
-                                <div class="project-hover">
+
+                    
+                    <div class="col-md-4 col-sm-6">
+                        <div class="project-item">
+                            <img src="/static/assets/img/six_degrees.png" alt="">
+                            <div class="project-hover">
+                                <a href="static/assets/Sixdegrees.zip" onclick="return confirmDownload()">
                                     <div class="inside">       
-                                        <h5>Six Degrees of Kevin Bacon</a></h5>
+                                        <h5>Six Degrees of Kevin Bacon</h5>
                                         <p>This C++ program computes the shortest path between two actors in terms of degrees of separation using their movie appearances as connections. 
                                             Takes a formatted input text file containing actor pairs and outputs the corresponding movie/actor connections in a separate output file.
                                             Optimized C++ code using an adjancency list data structure and BFS to find the shortest path efficiently. 
-                                            Click on this tile to download a zip file with the source code and instructions on use.
+                                            Click on this project tile to download a zip file with the source code and instructions on use.
                                         </p>   
-                                    </div>
-                                </div>
+                                    </div>   
+                                </a>
                             </div>
                         </div>
-                    </a>
+                    </div>
+
                     <div class="col-md-4 col-sm-6">
                         <div class="project-item">
                             <img src="/static/assets/img/fractal_example.png" alt="">
                             <div class="project-hover">
-                                <div class="inside">
-                                    <h5><a href="{{ url_for('ArtCanvas') }}">Art Canvas</a></h5>
-                                    <p>A simple canvas to draw and create whatever you desire. Made using JavaScript.</p>
-                                </div>
+                                <a href="{{ url_for('ArtCanvas') }}">
+                                    <div class="inside">
+                                        <h5>Art Canvas</h5>
+                                        <p>The application presents a user-friendly digital drawing platform that enables users to effortlessly design and produce a wide range of simple artistic creations. 
+                                            It incorporates features such as adjustable stroke thickness, the ability to stamp a fractal tree pattern, extensive color customization options, 
+                                            and dedicated buttons to save the artwork or clear the entire canvas. This versatile tool is developed utilizing the JavaScript programming language 
+                                            and the HTML5 Canvas element, resulting in a seamless and responsive user experience.
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="project-item">
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-md-4 col-sm-6">
+                        <div class="project-item">
+                            <img src="/static/assets/img/server.png" alt="">
+                            <div class="project-hover">
+                                <a href="static/assets/multithreaded_HTTP_server.zip" onclick="return confirmDownload()">
+                                    <div class="inside">   
+                                        <h5>Multithreaded HTTP Server</h5>
+                                        <p>This project uses C to implement a simple multi-threaded HTTP server that serves multiple clients simultaneously using a thread-safe queue. 
+                                        The server ensures that its responses conform to a coherent and atomic linearization of the client requests and creates an audit log to identify the linearization.
+                                        Uses the Pthreads library and supports GET/PUT methods.
+                                        Click on this project tile to download a zip file with the source code and instructions on use.
+                                        </p>   
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -255,7 +295,7 @@
             });
 
         function confirmDownload() {
-            return confirm("Download the source code file Sixdegrees.zip?");
+            return confirm("Download the source code ZIP?");
         }
     </script>
 </body>

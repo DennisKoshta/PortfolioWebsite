@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Env launchers
+launch_env.bat
+launch_test_app.bat
