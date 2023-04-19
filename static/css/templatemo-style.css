@@ -603,10 +603,10 @@ h3.profile-title {
 /*---------------------------------------------------------
  6. Project Pages
 -------------------------------------------------------- */
-.home-corner{
+.home-corner {
   position: fixed;
-  display: flex;
-  align-items: left;
+  top: 0;
+  left: 0;
   z-index: 100;
 }
 

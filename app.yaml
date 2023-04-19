@@ -13,3 +13,6 @@
 # limitations under the License.
 
 runtime: python39
+
+env_variables:
+  ENVIRONMENT: "production"

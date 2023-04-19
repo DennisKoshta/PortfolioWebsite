@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>The Monkey's Paw</title>
+        <meta name="description" content="A monkey's paw style wish generator">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico"/>
+
+        <link rel="stylesheet" href="/static/css/templatemo-style.css">
+        <link rel="stylesheet" href="/static/css/MonkeysPaw.css">
+    </head>
+    
+    <body>
+        <div class="home-corner">
+            <a href="/" class="home-button">Home</a>
+        </div>
+
+        <div class="paw-image">
+            <img src="/static/assets/img/monkeys_paw.jpg" alt="The Monkey's Paw" id="your_image">
+        </div>
+
+        <div class="wish-container">
+            <div class="wish-text">I wish</div>
+            <form id="user-input-form">
+                <input type="text" class="wish-input" id="user_input" name="user_input" maxlength="150" autocomplete="off">
+                <button type="submit" class="submit-button" id="submit_button">Submit</button>
+            </form>
+        </div>
+
+        <div class="response-box" id="response"></div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/static/js/MonkeysPaw.js"></script>
+    </body>
+</html>

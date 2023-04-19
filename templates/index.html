@@ -12,10 +12,10 @@
 
     <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico"/>
     
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css')}}">
+    <link rel="stylesheet" href="static/css/normalize.css">
+    <link rel="stylesheet" href="static/css/font-awesome.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/templatemo-style.css">
 
     <script src="/static/js/vendor/modernizr-2.6.2.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6LeeUMMgAAAAAGjd6JYnDJQrtY6_vHySUZXetYB9"></script>
@@ -127,82 +127,95 @@
                 <div class="row projects-holder">
 
                     <div class="col-md-4 col-sm-6">
-                        <div class="project-item">
-                            <img src="/static/assets/img/motion_tracking_example.png" alt="">
-                            <div class="project-hover">
-                                <a href="{{ url_for('MotionTracking') }}">
-                                    <div class="inside">
-                                        <h5>Hand Motion Tracking</h5>
-                                        <p>Utilizing MediaPipe NodeJS packages, this project provides real-time tracking and graphical visualization of hands and fingers by processing the input from a webcam. 
-                                            The implementation leverages the powerful machine learning models and algorithms provided by the MediaPipe library to accurately identify and track the positions of individual hand landmarks, 
-                                            enabling efficient and precise representation of hand gestures and movements in a visual form. 
-                                            This technology can be applied in a variety of domains, such as computer vision, human-computer interaction, and virtual reality, among others.
-                                        </p>
-                                    </div>
-                                </a>
+                        <a href="{{ url_for('MotionTracking') }}">
+                            <div class="project-item">
+                                <img src="/static/assets/img/motion_tracking_example.png" alt="">
+                                <div class="project-hover">
+                                        <div class="inside">
+                                            <h5>Hand Motion Tracking</h5>
+                                            <p>Utilizing MediaPipe NodeJS packages, this project provides real-time tracking and graphical visualization of hands and fingers by processing the input from a webcam. 
+                                                The implementation leverages the powerful machine learning models and algorithms provided by the MediaPipe library to accurately identify and track the positions of individual hand landmarks, 
+                                                enabling efficient and precise representation of hand gestures and movements in a visual form. 
+                                                This technology can be applied in a variety of domains, such as computer vision, human-computer interaction, and virtual reality, among others.
+                                            </p>
+                                        </div>
+                                </div>
                             </div>
+                        </a>
+                    </div>
+
+                    
+                        <div class="col-md-4 col-sm-6">
+                            <a href="static/assets/Sixdegrees.zip" onclick="return confirmDownload()">
+                                <div class="project-item">
+                                    <img src="/static/assets/img/six_degrees.png" alt="">
+                                    <div class="project-hover">
+                                            <div class="inside">       
+                                                <h5>Six Degrees of Kevin Bacon</h5>
+                                                <p>This C++ program computes the shortest path between two actors in terms of degrees of separation using their movie appearances as connections. 
+                                                    Takes a formatted input text file containing actor pairs and outputs the corresponding movie/actor connections in a separate output file.
+                                                    Optimized C++ code using an adjancency list data structure and BFS to find the shortest path efficiently. 
+                                                    Click on this project tile to download a zip file with the source code and instructions on use.
+                                                </p>   
+                                            </div>  
+                                    </div>
+                                </div> 
+                            </a>
                         </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <a href="{{ url_for('ArtCanvas') }}">
+                            <div class="project-item">
+                                <img src="/static/assets/img/fractal_example.png" alt="">
+                                <div class="project-hover">
+                                        <div class="inside">
+                                            <h5>Art Canvas</h5>
+                                            <p>The application presents a user-friendly digital drawing platform that enables users to effortlessly design and produce a wide range of simple artistic creations. 
+                                                It incorporates features such as adjustable stroke thickness, the ability to stamp a fractal tree pattern, extensive color customization options, 
+                                                and dedicated buttons to save the artwork or clear the entire canvas. This artistic tool uses the JavaScript programming language 
+                                                and the HTML5 Canvas element, resulting in a seamless and responsive user experience.
+                                            </p>
+                                        </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <a href="{{ url_for('MonkeysPaw') }}">
+                            <div class="project-item">
+                                <img src="/static/assets/img/monkeys_paw.jpg" alt="">
+                                <div class="project-hover">
+                                        <div class="inside">
+                                            <h5>The Monkey's Paw</h5>
+                                            <p>This project harnesses the power of OpenAI's GPT API to grant users their wishes, with a twist! 
+                                                Inspired by the famous short story "The Monkey's Paw" by W.W. Jacobs, this project aims to provide a fun and engaging experience for users.
+                                                The project is built using Python and the OpenAI GPT API for the main functionality, and leverages Flask for the web application backend. 
+                                                To ensure the security and privacy of the API key, environment variables are used to keep it secret even though the code is hosted in a git repository.
+                                            </p>
+                                        </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
 
                     
                     <div class="col-md-4 col-sm-6">
-                        <div class="project-item">
-                            <img src="/static/assets/img/six_degrees.png" alt="">
-                            <div class="project-hover">
-                                <a href="static/assets/Sixdegrees.zip" onclick="return confirmDownload()">
-                                    <div class="inside">       
-                                        <h5>Six Degrees of Kevin Bacon</h5>
-                                        <p>This C++ program computes the shortest path between two actors in terms of degrees of separation using their movie appearances as connections. 
-                                            Takes a formatted input text file containing actor pairs and outputs the corresponding movie/actor connections in a separate output file.
-                                            Optimized C++ code using an adjancency list data structure and BFS to find the shortest path efficiently. 
+                        <a href="static/assets/multithreaded_HTTP_server.zip" onclick="return confirmDownload()">
+                            <div class="project-item">
+                                <img src="/static/assets/img/server.png" alt="">
+                                <div class="project-hover">
+                                        <div class="inside">   
+                                            <h5>Multithreaded HTTP Server</h5>
+                                            <p>This project uses C to implement a simple multi-threaded HTTP server that serves multiple clients simultaneously using a thread-safe queue. 
+                                            The server ensures that its responses conform to a coherent and atomic linearization of the client requests and creates an audit log to identify the linearization.
+                                            Uses the Pthreads library and supports GET/PUT methods.
                                             Click on this project tile to download a zip file with the source code and instructions on use.
-                                        </p>   
-                                    </div>   
-                                </a>
+                                            </p>   
+                                        </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                        <div class="project-item">
-                            <img src="/static/assets/img/fractal_example.png" alt="">
-                            <div class="project-hover">
-                                <a href="{{ url_for('ArtCanvas') }}">
-                                    <div class="inside">
-                                        <h5>Art Canvas</h5>
-                                        <p>The application presents a user-friendly digital drawing platform that enables users to effortlessly design and produce a wide range of simple artistic creations. 
-                                            It incorporates features such as adjustable stroke thickness, the ability to stamp a fractal tree pattern, extensive color customization options, 
-                                            and dedicated buttons to save the artwork or clear the entire canvas. This versatile tool is developed utilizing the JavaScript programming language 
-                                            and the HTML5 Canvas element, resulting in a seamless and responsive user experience.
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                        <div class="project-item">
-                        </div>
-                    </div>
-
-                    
-                    <div class="col-md-4 col-sm-6">
-                        <div class="project-item">
-                            <img src="/static/assets/img/server.png" alt="">
-                            <div class="project-hover">
-                                <a href="static/assets/multithreaded_HTTP_server.zip" onclick="return confirmDownload()">
-                                    <div class="inside">   
-                                        <h5>Multithreaded HTTP Server</h5>
-                                        <p>This project uses C to implement a simple multi-threaded HTTP server that serves multiple clients simultaneously using a thread-safe queue. 
-                                        The server ensures that its responses conform to a coherent and atomic linearization of the client requests and creates an audit log to identify the linearization.
-                                        Uses the Pthreads library and supports GET/PUT methods.
-                                        Click on this project tile to download a zip file with the source code and instructions on use.
-                                        </p>   
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </div> <!-- .projects-holder -->
                 </div>
@@ -222,14 +235,6 @@
                         <embed src="https://drive.google.com/file/d/1tD5gzQS4yIuUi6Y4iXj-GHg1hxQGxZZp/preview?usp=sharings"/></object>
                 </div>  
 
-                <!-- <div class="resume">
-                    <object type="application/pdf" data="/static/assets/resume.pdf#toolbar=0">
-                        <iframe src="https://drive.google.com/file/d/1tD5gzQS4yIuUi6Y4iXj-GHg1hxQGxZZp/preview?usp=sharings" allowfullscreen></iframe>
-                </div>   -->
-                
-                <!-- <div class="pdf-viewer">
-                    <iframe src="https://drive.google.com/file/d/1tD5gzQS4yIuUi6Y4iXj-GHg1hxQGxZZp/preview?usp=sharings" allowfullscreen></iframe>
-                </div> -->
                 <hr>
 
                 <!-- CONTACT -->
