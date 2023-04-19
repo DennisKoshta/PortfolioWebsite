@@ -16,3 +16,4 @@ runtime: python39
 
 env_variables:
   ENVIRONMENT: "production"
+  GOOGLE_APPLICATION_CREDENTIALS: "propane-nomad-267903-800e1214c363.json"

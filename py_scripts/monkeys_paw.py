@@ -25,7 +25,7 @@ else:
   print(f"ENVIRONMENT variable is {environment}, no valid gpt_key detected.")
   exit()
 
-# MODEL = "gpt-4"
+# MODEL = "gpt-4" 
 MODEL = "gpt-3.5-turbo"
 
 # Set up encoding

@@ -17,3 +17,7 @@
 __pycache__/
 # Ignored by the build system
 /setup.cfg
+
+# Env launchers
+launch_env.bat
+launch_test_app.bat
