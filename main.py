@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, Response, jsonify
 from py_scripts import monkeys_paw
 import requests
+import os
+
+environment = os.environ.get("ENVIRONMENT")
 
 app = Flask(__name__)
 
@@ -28,6 +31,26 @@ def process_input():
     # print(f"response: {response}")
     return jsonify(response=response)
 
+# @app.route('/get_messages')
+# def get_messages():
+#     messages = [environment, monkeys_paw.get_key()]
+#     return jsonify(messages)
+
+# <script>
+#     async function fetchMessages() {
+#         const response = await fetch('/get_messages');
+#         const messages = await response.json();
+#         messages.forEach((message) => {
+#             console.log(message);
+#         });
+#     }
+
+#     fetchMessages();
+# </script>
+
 if __name__ == "__main__":
 	# start the flask app
-    app.run(debug=True)
+    if environment == "local":
+        app.run(debug=True)
+    else:
+        app.run(debug=False)
