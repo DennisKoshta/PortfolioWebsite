@@ -12,7 +12,9 @@ Welcome to my portfolio website! Here you can find my resume, as well as a few p
 2. Project: Hand Motion Tracking
 3. Project: Actor Degrees of Separation
 4. Project: JavaScript Drawing Canvas
-5. Google Cloud (gcloud) Hosting
+5. Project: Monkey's Paw Wish Generator
+6. Project: Multi-threaded HTTP Server
+7. Google Cloud (gcloud) Hosting
 
 ## 1. Flask Web Application
 
