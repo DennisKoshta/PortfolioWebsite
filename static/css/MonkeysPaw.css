@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #e48d5a;
+  /* background-color: #F4A261; */
+  background-image: linear-gradient(to left, #000000, #ff0000);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,11 +11,19 @@ body {
 }
 
 .fixed-container {
-  position: fixed;
-  top: 1;
+  position: absolute;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+}
+
+.title-text {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+  font-family: 'Dancing Script', cursive;
 }
 
 .paw-image {
@@ -22,9 +31,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
-  margin-top: -275px;
-  margin-left: -22px
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.subtitle-text {
+  font-size: 24px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 15px;
+  font-family: 'Pacifico', cursive;
 }
 
 .wish-container {
@@ -34,6 +50,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .wish-text {
@@ -89,8 +106,8 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 18px;
-  margin-top: 45%;
-  max-height: 250px; 
-  overflow-y: auto;
-  color: #000000
+  margin-top: 590px;
+  color: #000000;
+  min-height: 300px;
+  margin-left: 20px;
 }
