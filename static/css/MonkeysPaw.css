@@ -1,81 +1,96 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e9bd94;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #e48d5a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  margin: 0;
+}
 
-  .paw-image {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-    margin-top: -275px;
-  }
+.fixed-container {
+  position: fixed;
+  top: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
 
-  .wish-container {
-    width: 100%;
-    /* max-width: 600px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
+.paw-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-top: -275px;
+  margin-left: -22px
+}
 
-  .wish-text {
-    font-size: 24px;
-    margin-right: 10px;
-  }
+.wish-container {
+  width: 100%;
+  /* max-width: 600px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-  .wish-input {
-    flex-grow: 1;
-    border: 2px solid #ccc;
-    width: 400px;
-    padding: 10px;
-    border-radius: 25px;
-    font-size: 18px;
-    outline: none;
-    transition: border-color 0.3s;
-  }
+.wish-text {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #000000
+}
 
-  .wish-input:focus {
-    border-color: #888;
-  }
+.wish-input {
+  flex-grow: 1;
+  border: 2px solid #ccc;
+  width: 400px;
+  padding: 10px;
+  border-radius: 25px;
+  font-size: 18px;
+  outline: none;
+  transition: border-color 0.3s;
+}
 
-  .submit-button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 0 10px;
-    cursor: pointer;
-    border-radius: 25px;
-    transition: background-color 0.3s;
-  }
+.wish-input:focus {
+  border-color: #888;
+}
 
-  .submit-button:hover {
-    background-color: #45a049;
-  }
+.submit-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.5s, transform .5s;
+}
 
-  .loading {
-    display: none;
-  }
+.submit-button:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #45a049 0 -3px 0 inset;
+  transform: scale(1.1);
+}
 
-  .response-box {
-    width: 100%;
-    max-width: 1200px;
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 18px;
-  }
+.loading {
+  display: none;
+}
+
+.response-box {
+  width: 100%;
+  max-width: 1200px;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 45%;
+  max-height: 250px; 
+  overflow-y: auto;
+  color: #000000
+}
