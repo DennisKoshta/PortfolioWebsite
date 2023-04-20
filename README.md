@@ -123,6 +123,29 @@ The Monkey's Paw is an interactive web application that generates unexpected out
 - main.py
 - monkeys_paw.py
 
+## 5. Multi-threaded HTTP Server
+
+This project uses C to implement a simple multi-threaded HTTP server that serves multiple clients simultaneously using a thread-safe queue. The server ensures that its responses conform to a coherent and atomic linearization of the client requests and creates an audit log to identify the linearization. It uses the Pthreads library and supports GET/PUT methods.
+
+### Features
+
+- Multi-threaded server capable of handling multiple clients simultaneously
+- Thread-safe queue for managing client requests
+- Conforms to a coherent and atomic linearization of client requests
+- Creates an audit log for linearization identification
+- Supports GET and PUT methods
+- Optimized and memory-safe code
+
+### Technologies Used
+
+- C
+- Pthreads Library
+- HTTP Server
+
+### Files
+
+- static\assets\MultiThreadedHTTPServer.zip
+
 ## 6. Google Cloud (gcloud) Hosting
 
 Google Cloud Platform (GCP) offers a variety of services for hosting and managing web applications. In this project, I have used GCP's App Engine to deploy and host my portfolio website, providing a scalable and reliable hosting solution.
