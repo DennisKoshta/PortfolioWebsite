@@ -8,15 +8,15 @@ Welcome to my portfolio website! Here you can find my resume, as well as a few p
 
 ## Contents
 
-1. Flask Web Application
-2. Project: Hand Motion Tracking
-3. Project: Actor Degrees of Separation
-4. Project: JavaScript Drawing Canvas
-5. Project: Monkey's Paw Wish Generator
-6. Project: Multi-threaded HTTP Server
-7. Google Cloud (gcloud) Hosting
+1. [Flask Web Application](#flask-web-application)
+2. [Project: Hand Motion Tracking](#hand-motion-tracking)
+3. [Project: Actor Degrees of Separation](#actor-degrees-of-separation)
+4. [Project: JavaScript Drawing Canvas](#javascript-drawing-canvas)
+5. [Project: Monkey's Paw Wish Generator](#monkey's-paw-wish-generator)
+6. [Project: Multi-threaded HTTP Server](#multi-threaded-http-server)
+7. [Google Cloud (gcloud) Hosting](#google-cloud-hosting)
 
-## 1. Flask Web Application
+## 1. <a id="flask-web-application" style="color: inherit; text-decoration: none;">Flask Web Application</a>
 
 Flask is a lightweight Python web framework that allows for quick and easy development of web applications. In this project, I have utilized Flask to create the backend of my portfolio website, handling the routing and serving of pages.
 
@@ -36,7 +36,7 @@ Flask is a lightweight Python web framework that allows for quick and easy devel
 - app.yaml
 - templates\index.html
 
-## 2. Hand Motion Tracking
+## 2. <a id="hand-motion-tracking" style="color: inherit; text-decoration: none;">Hand Motion Tracking</a>
 
 This project utilizes the MediaPipe NodeJS package to track and graphically visualize your hands and fingers using your webcam. It's an interesting way to explore computer vision and machine learning capabilities.
 
@@ -56,7 +56,7 @@ This project utilizes the MediaPipe NodeJS package to track and graphically visu
 - templates\MotionTracking.html
 - static\assets\img\motion_tracking_example.png
 
-## 2. Actor Degrees of Separation
+## 3. <a id="actor-degrees-of-separation" style="color: inherit; text-decoration: none;">Actor Degrees of Separation</a>
 
 This C++ program computes the shortest path between two actors in terms of degrees of separation using their movie appearances as connections. The program takes a formatted input text file containing actor pairs and outputs the corresponding movie/actor connections in a separate output file. The C++ code is optimized using an adjacency list data structure and BFS to find the shortest path efficiently.
 
@@ -76,7 +76,7 @@ This C++ program computes the shortest path between two actors in terms of degre
 
 - static\assets\Sixdegrees.zip
 
-## 3. JavaScript Drawing Canvas
+## 4. <a id="javascript-drawing-canvas" style="color: inherit; text-decoration: none;">JavaScript Drawing Canvas</a>
 
 A simple canvas to draw and create whatever you desire. This project is made using JavaScript and allows users to unleash their creativity on the web.
 
@@ -99,7 +99,7 @@ A simple canvas to draw and create whatever you desire. This project is made usi
 - static\js\ArtCanvas.js
 - static\css\ArtCanvas.css
 
-## 4. Monkey's Paw Wish Generator
+## 5. <a id="monkey's-paw-wish-generator" style="color: inherit; text-decoration: none;">Monkey's Paw Wish Generator</a>
 
 The Monkey's Paw is an interactive web application that generates unexpected outcomes for user-submitted wishes. This project utilizes the OpenAI GPT API to generate the responses, and Flask for the backend server.
 
@@ -125,7 +125,7 @@ The Monkey's Paw is an interactive web application that generates unexpected out
 - main.py
 - monkeys_paw.py
 
-## 5. Multi-threaded HTTP Server
+## 6. <a id="multi-threaded-http-server" style="color: inherit; text-decoration: none;">Multi-threaded HTTP Server</a>
 
 This project uses C to implement a simple multi-threaded HTTP server that serves multiple clients simultaneously using a thread-safe queue. The server ensures that its responses conform to a coherent and atomic linearization of the client requests and creates an audit log to identify the linearization. It uses the Pthreads library and supports GET/PUT methods.
 
@@ -148,7 +148,7 @@ This project uses C to implement a simple multi-threaded HTTP server that serves
 
 - static\assets\MultiThreadedHTTPServer.zip
 
-## 6. Google Cloud (gcloud) Hosting
+## 7. <a id="google-cloud-hosting" style="color: inherit; text-decoration: none;">Google Cloud (gcloud) Hosting</a>
 
 Google Cloud Platform (GCP) offers a variety of services for hosting and managing web applications. In this project, I have used GCP's App Engine to deploy and host my portfolio website, providing a scalable and reliable hosting solution.
 
