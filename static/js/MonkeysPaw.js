@@ -1,8 +1,13 @@
 $(document).ready(function() {
     // Send response
     $('#user-input-form').on('submit', function(event) {
+        $("#submit_button").prop("disabled", true);
         event.preventDefault();
         let userInput = $('#user_input').val();
+
+        $("#response").html("")
+        $("#your_image").show();
+        $("#your_image").attr("src", "/static/assets/img/loading.gif");
 
         $.ajax({
             type: "POST",
@@ -10,16 +15,20 @@ $(document).ready(function() {
             data: {user_input : userInput},
             success: function(data) {
                 $("#response").html(data.response);
+                $("#your_image").hide();
+                $("#submit_button").prop("disabled", false);
             },
             error: function() {
                 $("#response").html("An error occurred.");
+                $("#your_image").attr("src", "/static/assets/img/monkeys_paw.jpg");
+                $("#submit_button").prop("disabled", false);
             }
         });
     });
 });
 
 $(document).ready(function() {
-    const minInputLength = 5;
+    const minInputLength = 2;
     
     // Enable or disable the submit button based on the input length
     $('#user-input-form').on('input', function(event) {
