@@ -97,23 +97,7 @@ A simple canvas to draw and create whatever you desire. This project is made usi
 - static\js\ArtCanvas.js
 - static\css\ArtCanvas.css
 
-## 5. Google Cloud (gcloud) Hosting
-
-Google Cloud Platform (GCP) offers a variety of services for hosting and managing web applications. In this project, I have used GCP's App Engine to deploy and host my portfolio website, providing a scalable and reliable hosting solution.
-
-### Features
-
-- Easy deployment and management of web applications
-- Automatic scaling to handle varying traffic levels
-- Integration with other Google Cloud services for enhanced functionality
-
-### Technologies Used
-
-- Google Cloud Platform (GCP)
-- App Engine
-- gcloud CLI
-
-## 6. Monkey's Paw Wish Generator
+## 4. Monkey's Paw Wish Generator
 
 The Monkey's Paw is an interactive web application that generates unexpected outcomes for user-submitted wishes. This project utilizes the OpenAI GPT API to generate the responses, and Flask for the backend server.
 
@@ -138,3 +122,20 @@ The Monkey's Paw is an interactive web application that generates unexpected out
 - static\css\MonkeysPaw.css
 - main.py
 - monkeys_paw.py
+
+## 6. Google Cloud (gcloud) Hosting
+
+Google Cloud Platform (GCP) offers a variety of services for hosting and managing web applications. In this project, I have used GCP's App Engine to deploy and host my portfolio website, providing a scalable and reliable hosting solution.
+
+### Features
+
+- Easy deployment and management of web applications
+- Automatic scaling to handle varying traffic levels
+- Integration with other Google Cloud services for enhanced functionality
+
+### Technologies Used
+
+- Google Cloud Platform (GCP)
+- App Engine
+- gcloud CLI
+
