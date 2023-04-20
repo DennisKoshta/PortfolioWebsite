@@ -112,3 +112,29 @@ Google Cloud Platform (GCP) offers a variety of services for hosting and managin
 - Google Cloud Platform (GCP)
 - App Engine
 - gcloud CLI
+
+## 6. Monkey's Paw Wish Generator
+
+The Monkey's Paw is an interactive web application that generates unexpected outcomes for user-submitted wishes. This project utilizes the OpenAI GPT API to generate the responses, and Flask for the backend server.
+
+### Features
+
+- Accepts user-submitted wishes
+- Generates unexpected outcome using OpenAI GPT API
+- Displays the generated outcomes in a user-friendly format
+- Easy integration with the web application using Flask
+
+### Technologies Used
+
+- Python
+- Flask
+- OpenAI GPT API
+
+### Files
+
+- templates\MonkeysPaw.html
+- static\assets\img\monkeys_paw.png
+- static\js\MonkeysPaw.js
+- static\css\MonkeysPaw.css
+- main.py
+- monkeys_paw.py
