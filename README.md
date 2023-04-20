@@ -4,7 +4,7 @@ Welcome to my portfolio website! Here you can find my resume, as well as a few p
 
 ## Website Link
 
-[www.denniskoshta.com](https://propane-nomad-267903.wl.r.appspot.com/)
+[www.denniskoshta.com](https://www.denniskoshta.com)
 
 ## Contents
 
