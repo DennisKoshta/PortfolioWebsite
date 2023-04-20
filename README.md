@@ -1,6 +1,6 @@
-# My Website Portfolio
+# My Website Portfolio Git Repository
 
-Welcome to my portfolio website! Here you can find my resume, as well as a few projects that demonstrate my skills in software engineering and machine learning. In this repository, you will find the source code and documentation for the website and projects.
+Welcome to my portfolio website's Git repository! This repository contains the source code and documentation for my personal portfolio website, showcasing my skills, projects, and accomplishments in software development and machine learning. The README is designed to provide descriptions of my projects, allowing visitors to explore my work and get to know me better. Feel free to browse the code, learn from it, and even use it as a starting point for your own portfolio website.
 
 ## Website Link
 
