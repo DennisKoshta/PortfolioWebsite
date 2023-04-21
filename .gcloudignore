@@ -18,6 +18,10 @@ __pycache__/
 # Ignored by the build system
 /setup.cfg
 
+# python venv
+env/
+
 # Env launchers
 launch_env.bat
 launch_test_app.bat
+launch_vscode.bat

@@ -26,9 +26,7 @@ def MonkeysPaw():
 @app.route('/process_input', methods=['POST'])
 def process_input():
     user_input = request.form['user_input']
-    # print(f"user input: I wish {user_input}")
     response = monkeys_paw.gpt_response(f"I wish {user_input}")
-    # print(f"response: {response}")
     return jsonify(response=response)
 
 # @app.route('/get_messages')

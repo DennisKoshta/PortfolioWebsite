@@ -131,6 +131,7 @@ dmypy.json
 # Env launchers
 launch_env.bat
 launch_test_app.bat
+launch_vscode.bat
 
 # Secret JSON stuff
 propane-nomad-267903-800e1214c363.json
