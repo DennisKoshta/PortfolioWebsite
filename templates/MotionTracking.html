@@ -8,8 +8,8 @@
     <meta name="description" content="An app to track your hands through the webcam.">
 
     <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css')}}">
+    <link rel="stylesheet" href="/static/css/templatemo-style.css">
+    <link rel="stylesheet" href="/static/css/MotionTracking.css">
 
     <script src="/static/js/vendor/jquery-1.10.2.min.js"></script>
     <script src="/static/js/min/plugins.min.js"></script>
@@ -20,45 +20,15 @@
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
-
-    <style>
-        body {
-            background-color: rgb(40, 50, 55);
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .home-corner {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-        }
-
-        .motion-tracking-display {
-            position: relative;
-            width: 80%;
-            max-width: 1280px;
-        }
-
-        .input_video {
-            display: none;
-        }
-
-        .output_canvas {
-            width: 100%;
-            height: auto;
-        }
-    </style>
 </head>
 <body>
     <div class="home-corner">
-        <a href="/" class="btn btn-primary">Home</a>
+        <a href="/" class="home-button">Home</a>
     </div>
 
     <div class="motion-tracking-display">
+        <div class="title-text">Hand Tracking Display</div>
+
         <video class="input_video"></video>
         <canvas class="output_canvas" width="1280" height="720"></canvas>
     </div>

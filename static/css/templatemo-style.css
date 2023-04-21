@@ -656,37 +656,6 @@ a.home-button:active {
 }
 
 /*---------------------------------------------------------
- 7. Motion Tracking
--------------------------------------------------------- */
-.motion-tracking-display {
-  padding: 260px 80px;
-  position: relative;
-  background: url("/static/assets/img/motion_tracking_bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  z-index: 2;
-}
-
-.motion-tracking-display .project-text {
-  position: relative;
-  z-index: 4;
-}
-
-.motion-tracking-display .project-text h2 {
-  font-size: 52px;
-  font-family: 'robotobold';
-  color: white;
-  margin-bottom: 30px;
-  margin-top: -230px;
-}
-
-.motion-tracking-display .project-text h5 {
-  font-size: 27px;
-  color: white;
-}
-
-/*---------------------------------------------------------
  7. Resume
 -------------------------------------------------------- */
 .pdf-viewer {
