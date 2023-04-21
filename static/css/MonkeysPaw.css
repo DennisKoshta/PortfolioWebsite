@@ -1,7 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   /* background-color: #F4A261; */
-  background-image: linear-gradient(to left, #000000, #ff0000);
+  /* background-image: linear-gradient(to left, #000000, #ff0000); */
+  background-image: radial-gradient(circle, rgb(240, 160, 160), rgb(255, 0, 0), rgb(0, 0, 0));
   display: flex;
   flex-direction: column;
   align-items: center;
