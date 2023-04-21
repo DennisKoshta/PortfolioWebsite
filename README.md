@@ -150,7 +150,7 @@ This project uses C to implement a simple multi-threaded HTTP server that serves
 
 ## 7. <a id="google-cloud-hosting" style="color: inherit; text-decoration: none;">Google Cloud (gcloud) Hosting</a>
 
-Google Cloud Platform (GCP) offers a variety of services for hosting and managing web applications. In this project, I have used GCP's App Engine to deploy and host my portfolio website, providing a scalable and reliable hosting solution.
+Google Cloud Platform (GCP) offers a variety of services for hosting and managing web applications. In this project, I have used GCP's App Engine to deploy and host my portfolio website, providing a scalable and reliable hosting solution that provides a custom domain and SSL security for an HTTPS connection.
 
 ### Features
 
@@ -163,4 +163,5 @@ Google Cloud Platform (GCP) offers a variety of services for hosting and managin
 - Google Cloud Platform (GCP)
 - App Engine
 - gcloud CLI
+- google-cloud-secret-manager
 
