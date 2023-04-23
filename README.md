@@ -115,6 +115,7 @@ The Monkey's Paw is an interactive web application that generates unexpected out
 - Python
 - Flask
 - OpenAI GPT API
+- google-cloud-secret-manager
 
 ### Files
 
