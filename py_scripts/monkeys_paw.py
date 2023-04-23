@@ -46,8 +46,6 @@ def gpt_response(content):
   if token_count > 8192:
     return "Your wish is too long."
 
-  # return "Education is one of the most essential aspects of human life. It is the key to unlocking one's full potential and creating opportunities for oneself. Education equips individuals with knowledge and skills necessary to function in society and contribute to the growth and development of their communities. It not only promotes personal growth and self-fulfillment but also expands societal progress and innovation. Education is a means of empowerment that helps individuals rise above poverty and enrich their lives. It is a fundamental right that every individual should have access to in order to achieve their aspirations and become productive members of society. Hence, education is vital for personal and societal development, and its significance cannot be overstated.Education is one of the most essential aspects of human life. It is the key to unlocking one's full potential and creating opportunities for oneself. Education equips individuals with knowledge and skills necessary to function in society and contribute to the growth and development of their communities. It not only promotes personal growth and self-fulfillment but also expands societal progress and innovation. Education is a means of empowerment that helps individuals rise above poverty and enrich their lives. It is a fundamental right that every individual should have access to in order to achieve their aspirations and become productive members of society. Hence, education is vital for personal and societal development, and its significance cannot be overstated.Education is one of the most essential aspects of human life. It is the key to unlocking one's full potential and creating opportunities for oneself. Education equips individuals with knowledge and skills necessary to function in society and contribute to the growth and development of their communities. It not only promotes personal growth and self-fulfillment but also expands societal progress and innovation. Education is a means of empowerment that helps individuals rise above poverty and enrich their lives. It is a fundamental right that every individual should have access to in order to achieve their aspirations and become productive members of society. Hence, education is vital for personal and societal development, and its significance cannot be overstated."
-
   response = openai.ChatCompletion.create(
             model=MODEL,
             messages=[
@@ -59,5 +57,6 @@ def gpt_response(content):
   
   return response.choices[0].message.content.strip()
 
+# Get GPT API key
 def get_key():
   return openai.api_key
