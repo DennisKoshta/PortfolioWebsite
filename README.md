@@ -48,12 +48,15 @@ This project utilizes the MediaPipe NodeJS package to track and graphically visu
 
 ### Technologies Used
 
+- JavaScript
 - NodeJS
 - MediaPipe
 
 ### Files
 
 - templates\MotionTracking.html
+- static\css\MotionTracking.css
+- static\js\MotionTracking.js
 - static\assets\img\motion_tracking_example.png
 
 ## 3. <a id="actor-degrees-of-separation" style="color: inherit; text-decoration: none;">Actor Degrees of Separation</a>
