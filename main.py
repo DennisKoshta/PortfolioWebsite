@@ -29,9 +29,11 @@ def process_input():
     response = monkeys_paw.gpt_response(f"I wish {user_input}")
     return jsonify(response=response)
 
+# DEVELOPER CONSOLE DEBUG MESSAGE LOGGING (paste JS to desired html file and uncomment python)
+
 # @app.route('/get_messages')
 # def get_messages():
-#     messages = [environment, monkeys_paw.get_key()]
+#     messages = [f"environment: {environment}"]
 #     return jsonify(messages)
 
 # <script>
