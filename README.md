@@ -29,6 +29,7 @@ Flask is a lightweight Python web framework that allows for quick and easy devel
 
 - Python
 - Flask
+- HTML/CSS/JS
 
 ### Files
 
@@ -98,9 +99,9 @@ A simple canvas to draw and create whatever you desire. This project is made usi
 ### Files
 
 - templates\ArtCanvas.html
-- static\assets\img\fractal_example.png
-- static\js\ArtCanvas.js
 - static\css\ArtCanvas.css
+- static\js\ArtCanvas.js
+- static\assets\img\fractal_example.png
 
 ## 5. <a id="monkey's-paw-wish-generator" style="color: inherit; text-decoration: none;">Monkey's Paw Wish Generator</a>
 
@@ -122,12 +123,12 @@ The Monkey's Paw is an interactive web application that generates unexpected out
 
 ### Files
 
-- templates\MonkeysPaw.html
-- static\assets\img\monkeys_paw.png
-- static\js\MonkeysPaw.js
-- static\css\MonkeysPaw.css
 - main.py
 - monkeys_paw.py
+- templates\MonkeysPaw.html
+- static\css\MonkeysPaw.css
+- static\js\MonkeysPaw.js
+- static\assets\img\monkeys_paw.png
 
 ## 6. <a id="multi-threaded-http-server" style="color: inherit; text-decoration: none;">Multi-threaded HTTP Server</a>
 
