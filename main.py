@@ -10,8 +10,6 @@ app = Flask(__name__)
 
 # limiter = Limiter(key_func=lambda: request.remote_addr if request else None, app=app, default_limits=["1000 per hour"])  # Initialize rate limiter using IP addresses
 
-# limiter = Limiter(get_remote_address, app=app, default_limits=["200 per day", "50 per hour"])
-
 @app.route("/")
 def index():
     return render_template('index.html')   
