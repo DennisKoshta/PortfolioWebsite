@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, Response, jsonify, g
 from py_scripts import monkeys_paw
-from flask_limiter import Limiter
+# from flask_limiter import Limiter
 import requests
 import os
 
