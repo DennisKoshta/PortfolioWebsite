@@ -51,12 +51,12 @@ $(document).ready(function() {
     });
 });
 
-async function fetchRemainingRequests() {
-    const response = await fetch('/get_remaining_requests');
-    const data = await response.json();
-    const remainingRequests = data.remaining_requests;
-    // Update the DOM to display the remaining requests
-    document.getElementById("remaining-requests").innerText = `Remaining wishes: ${remainingRequests}`;
-}
+// async function fetchRemainingRequests() {
+//     const response = await fetch('/get_remaining_requests');
+//     const data = await response.json();
+//     const remainingRequests = data.remaining_requests;
+//     // Update the DOM to display the remaining requests
+//     document.getElementById("remaining-requests").innerText = `Remaining wishes: ${remainingRequests}`;
+// }
 
-fetchRemainingRequests();
+// fetchRemainingRequests();
