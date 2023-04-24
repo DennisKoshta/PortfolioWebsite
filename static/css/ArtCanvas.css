@@ -91,7 +91,7 @@ button:hover{
     background-color: #0000FF;
 }
 .clr:nth-child(8){
-    background-image: url("/static/assets/img/dice.svg");
+    background-image: url("/static/assets/svg/dice.svg");
     background-color: #04AA6D;
 }
 
@@ -114,11 +114,11 @@ button:hover{
     transform: scale(1.2);
 }
 .mode:nth-child(1){
-    background-image: url("/static/assets/img/pen.svg");
+    background-image: url("/static/assets/svg/pen.svg");
     background-color: #04AA6D;
 }
 .mode:nth-child(2){
-    background-image: url("/static/assets/img/stamp.svg");
+    background-image: url("/static/assets/svg/stamp.svg");
     background-color: #04AA6D;
 }
 
