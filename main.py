@@ -8,7 +8,7 @@ environment = os.environ.get("ENVIRONMENT")
 
 app = Flask(__name__)
 
-limiter = Limiter(key_func=lambda: request.remote_addr if request else None, app=app, default_limits=["1000 per hour"])  # Initialize rate limiter using IP addresses
+# limiter = Limiter(key_func=lambda: request.remote_addr if request else None, app=app, default_limits=["1000 per hour"])  # Initialize rate limiter using IP addresses
 
 # limiter = Limiter(get_remote_address, app=app, default_limits=["200 per day", "50 per hour"])
 
@@ -42,7 +42,7 @@ def MonkeysPaw():
 #     return jsonify(remaining_requests=remaining_requests)
 
 @app.route('/process_input', methods=['POST'])
-@limiter.limit("5 per day")  # Limit the number of requests to 5 per day per IP address
+# @limiter.limit("5 per day")  # Limit the number of requests to 5 per day per IP address
 def process_input():
     user_input = request.form['user_input']
     response = monkeys_paw.gpt_response(f"I wish {user_input}")
