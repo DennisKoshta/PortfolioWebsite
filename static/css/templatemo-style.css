@@ -454,6 +454,17 @@ h3.profile-title {
   font-size: 27px;
   color: white;
 }
+.h4-container {
+  position: absolute;
+  bottom: 8px; /* Adjust this value to change the distance from the bottom */
+  width: 100%;
+}
+.welcome-text h4 {
+  margin-top: 20px;
+  font-size: 27px;
+  color: rgb(0, 0, 238);
+  text-align: center;
+}
 
 /*------ about us ------ */
 .about-image {
