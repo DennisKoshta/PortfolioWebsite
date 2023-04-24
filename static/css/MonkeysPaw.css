@@ -53,7 +53,7 @@ body {
 }
 
 /* Wish counter styles */
-.wish-counter {
+/* .wish-counter {
   display: inline-block;
   background-color: #f5f5f5;
   border-radius: 8px;
@@ -66,9 +66,9 @@ body {
 }
 
 /* Customize the appearance of the remaining wishes text */
-#remaining-requests {
+/* #remaining-requests {
   margin: 0;
-}
+} */
 
 .wish-text {
   font-size: 24px;
