@@ -461,7 +461,7 @@ h3.profile-title {
 
 .h4-container {
   position: absolute; /* Set the position to absolute */
-  bottom: -270px; /* Set the distance from the bottom of the banner-bg */
+  bottom: -250px; /* Set the distance from the bottom of the banner-bg */
   left: 10%; /* Move the container to the center of the banner-bg */
   transform: translateX(-50%); /* Adjust the position to be perfectly in the center */
   z-index: 4; /* Set the z-index to make sure it's above the banner-overlay */
