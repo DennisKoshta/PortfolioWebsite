@@ -34,11 +34,11 @@ def set_rate_limit_info():
     if limit_info:
         g.rate_limit_info = limit_info[0]
 
-# Update the get_remaining_requests function
 @app.route('/get_remaining_requests', methods=['GET'])
 @limiter.limit("1 per second")  # Limit how often the remaining requests can be checked
 def get_remaining_requests():
-    remaining_requests = g.rate_limit_info.remaining
+    daily_limit = 5  # The same limit as specified in the process_input() function
+    remaining_requests = daily_limit - limiter.get_request_count(request.endpoint, request.method, limiter.key_func())
     return jsonify(remaining_requests=remaining_requests)
 
 @app.route('/process_input', methods=['POST'])
