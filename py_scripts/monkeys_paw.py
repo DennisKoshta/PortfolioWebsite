@@ -26,8 +26,8 @@ elif environment == "production":
 else:
   valid_env = False
 
-# MODEL = "gpt-4" 
-MODEL = "gpt-3.5-turbo"
+MODEL = "gpt-4" 
+# MODEL = "gpt-3.5-turbo"
 
 # Set up encoding
 encoding = tiktoken.encoding_for_model(MODEL)
