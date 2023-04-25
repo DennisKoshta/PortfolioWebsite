@@ -1,6 +1,3 @@
-// Disable so that you can't submit nothing
-$("#submit_button").prop("disabled", true);
-
 processInputRequest("", 0);
 
 $('#user-input-form').on('submit', function (event) {
@@ -47,6 +44,12 @@ $(document).ready(function() {
 });
 
 function updateModelDisplay(calls) {
+    if (calls === -1) {
+        $("#current_model").text(`Current Model: error`);
+        alert("Error fetching model, please refresh and try again");
+        return
+    }
+
     model = (calls < 3) ? "gpt-4" : "gpt-3.5-turbo";
 
     console.log(model);
@@ -82,7 +85,13 @@ function processInputRequest(userInput, use_api) {
             $("#loading_text").hide();
 
             // Update model display
-            updateModelDisplay(data.calls);
+            updateModelDisplay((typeof data.calls == 'number') ? data.calls : -1);
+
+            // Don't allow empty submit on refresh
+            if (use_api === 0) {
+                // Disable so that you can't submit nothing
+                $("#submit_button").prop("disabled", true);
+            }
         },
         error: function () {
             // Show response error
@@ -100,7 +109,23 @@ function processInputRequest(userInput, use_api) {
             $("#loading_text").hide();
 
             // Update model display
-            updateModelDisplay(data.calls);
+            updateModelDisplay((typeof data.calls == 'number') ? data.calls : -1);
+
+            // Don't allow empty submit on refresh
+            if (use_api === 0) {
+                // Disable so that you can't submit nothing
+                $("#submit_button").prop("disabled", true);
+            }
         },
     });
+
+    
+
+    // const minInputLength = 2;
+    
+    // if ($('#user_input').val().length >= minInputLength) {
+    //     $("#submit_button").prop("disabled", false);
+    // } else {
+    //     $("#submit_button").prop("disabled", true);
+    // }
 }
