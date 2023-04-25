@@ -1,38 +1,26 @@
 // Disable so that you can't submit nothing
 $("#submit_button").prop("disabled", true);
 
-updateCurrentModel();
+processInputRequest("", false);
 
 $('#user-input-form').on('submit', function (event) {
-  updateCurrentModel();
-  $("#submit_button").prop("disabled", true);
-  event.preventDefault();
-  let userInput = $('#user_input').val();
+    // Disable submit button during loading
+    $("#submit_button").prop("disabled", true);
+    event.preventDefault();
 
-  $("#response").html("");
-  $("#your_image").attr("src", "/static/assets/img/loading.gif");
-  // Show the "loading" text
-  $("#loading_text").show();
+    // Get input
+    let userInput = $('#user_input').val();
 
-  $.ajax({
-    type: "POST",
-    url: "/process_input",
-    data: { user_input: userInput },
-    success: function (data) {
-      $("#response").html(data.response);
-      $("#your_image").attr("src", "/static/assets/img/monkeys_paw.jpg");
-      $("#submit_button").prop("disabled", false);
-      // Hide the "loading" text
-      $("#loading_text").hide();
-    },
-    error: function () {
-      $("#response").html("An error occurred.");
-      $("#your_image").attr("src", "/static/assets/img/monkeys_paw.jpg");
-      $("#submit_button").prop("disabled", false);
-      // Hide the "loading" text
-      $("#loading_text").hide();
-    },
-  });
+    // Clear response box
+    $("#response").html("");
+
+    // Change from image to loading.gif
+    $("#your_image").attr("src", "/static/assets/img/loading.gif");
+
+    // Show the "loading" text
+    $("#loading_text").show();
+
+    processInputRequest(userInput, true);
 });
 
 $(document).ready(function() {
@@ -58,24 +46,61 @@ $(document).ready(function() {
     });
 });
 
-function updateCurrentModel() {
+function updateModelDisplay(calls) {
+    model = (calls < 3) ? "gpt-4" : "gpt-3.5-turbo";
+
+    console.log(model);
+    console.log(calls);
+
+    // Update the displayed model
+    $("#current_model").text(`Current Model: ${model}`);
+
+    // Alert user of reaching limit
+    if (calls === 3) {
+        alert("You have reached the limit of GPT-4 API calls. Subsequent requests will use GPT-3.5-turbo.");
+    }
+}
+
+function processInputRequest(userInput, use_api) {
     $.ajax({
-        type: "GET",
-        url: "/get_current_model",
+        type: "POST",
+        url: "/process_input",
+        data: {user_input: userInput, use_api: use_api},
         success: function (data) {
-            // Set the GPT-4 API call count based on the returned model
-            gpt4_api_call_count = data.model === "gpt-4" ? gpt4_api_call_count : 3;
-
-            // Update the displayed model
-            $("#current_model").text(`Current Model: ${data.model}`);
-
-            // Alert user of reaching limit
-            if (gpt4_api_call_count === 3) {
-                alert("You have reached the limit of GPT-4 API calls. Subsequent requests will use GPT-3.5-turbo.");
+            // Show response
+            if (use_api === true) {
+                $("#response").html(data.response);
             }
+
+            // Change from loading.gif to image
+            $("#your_image").attr("src", "/static/assets/img/monkeys_paw.jpg");
+
+            // Re-enable submit button 
+            $("#submit_button").prop("disabled", false);
+
+            // Hide the "loading" text
+            $("#loading_text").hide();
+
+            // Update model display
+            updateModelDisplay(data.calls);
         },
         error: function () {
-            $("#current_model").text("Error getting current model");
+            // Show response error
+            if (use_api === true) {
+                $("#response").html("An error occurred.");
+            }
+
+            // Change from loading.gif to image
+            $("#your_image").attr("src", "/static/assets/img/monkeys_paw.jpg");
+
+            // Re-enable submit button 
+            $("#submit_button").prop("disabled", false);
+
+            // Hide the "loading" text
+            $("#loading_text").hide();
+
+            // Update model display
+            updateModelDisplay(data.calls);
         },
     });
 }

@@ -31,6 +31,7 @@ def MonkeysPaw():
 @app.route('/process_input', methods=['POST'])
 def process_input():
     user_input = request.form['user_input']
+    use_api = request.form['use_api']
 
     # Get user IP
     if 'X-Forwarded-For' in request.headers:
@@ -42,50 +43,33 @@ def process_input():
     user_doc_ref = db.collection('users').document(user_ip)
     user_doc = user_doc_ref.get()
 
-    if user_doc.exists:
+    if user_doc.exists and ('api_calls' in user_doc.to_dict()):
         api_calls = user_doc.to_dict()['api_calls'] + 1
     else:
         api_calls = 1
 
-    if environment == "local":
+    # Check for dev account
+    if user_ip=="127.0.0.1" and environment=="local":
         print(f"user_ip: {user_ip}") 
         print(f"user_api_calls: {api_calls}")
+        api_calls = 0
+
+    # Just api_call return
+    if not use_api:
+        api_calls -= 1
+        user_doc_ref.set({'api_calls': api_calls})
+        return jsonify(response="None", calls=api_calls)
 
     user_doc_ref.set({'api_calls': api_calls})
 
     # Check if the user has reached the limit for GPT-4 API calls
-    if api_calls < 4 or (user_ip=="127.0.0.1" and environment=="local"):
+    if api_calls < 3:
         model = "gpt-4"
     else:
         model = "gpt-3.5-turbo"
 
     response = monkeys_paw.gpt_response(f"I wish {user_input}", model)
-    return jsonify(response=response)
-
-@app.route('/get_current_model', methods=['GET'])
-def get_current_model():
-    # Get user IP
-    if 'X-Forwarded-For' in request.headers:
-        user_ip = request.headers['X-Forwarded-For']
-    else:
-        user_ip = request.remote_addr
-
-    # Increment the GPT-4 API calls made by the user
-    user_doc_ref = db.collection('users').document(user_ip)
-    user_doc = user_doc_ref.get()
-
-    if user_doc.exists:
-        api_calls = user_doc.to_dict()['api_calls']
-    else:
-        api_calls = 0
-
-    if api_calls < 4 or (user_ip=="127.0.0.1" and environment=="local"):
-        model = "gpt-4"
-    else:
-        model = "gpt-3.5-turbo"
-
-    return jsonify(model=model)
-
+    return jsonify(response=response, calls=api_calls)
 
 # DEVELOPER CONSOLE DEBUG MESSAGE LOGGING (paste JS to desired html file and uncomment python)
 
