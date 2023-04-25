@@ -129,3 +129,13 @@ body {
   min-height: 300px;
   margin-left: 20px;
 }
+
+#loading_text {
+  font-size: 18px;
+  color: #000000;
+  position: absolute;
+  bottom: 120px;
+  text-align: center;
+  width: 100%;
+  font-family: 'Pacifico', cursive;
+}
