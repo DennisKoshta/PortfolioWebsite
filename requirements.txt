@@ -6,3 +6,4 @@ feedparser
 tiktoken
 google-cloud
 google-cloud-secret-manager
+google-cloud-firestore
