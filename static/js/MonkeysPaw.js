@@ -68,7 +68,7 @@ function processInputRequest(userInput, use_api) {
         data: {user_input: userInput, use_api: use_api},
         success: function (data) {
             // Show response
-            if (use_api === true) {
+            if (use_api === 1) {
                 $("#response").html(data.response);
             }
 
@@ -86,7 +86,7 @@ function processInputRequest(userInput, use_api) {
         },
         error: function () {
             // Show response error
-            if (use_api === true) {
+            if (use_api === 1) {
                 $("#response").html("An error occurred.");
             }
 
