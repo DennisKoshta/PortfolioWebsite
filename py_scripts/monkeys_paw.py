@@ -6,6 +6,7 @@ from urllib.parse import quote
 import tiktoken
 import os
 from google.cloud import secretmanager
+import time
 
 def get_secret(secret_id):
   project_id = os.environ.get("GOOGLE_CLOUD_PROJECT")
@@ -45,6 +46,9 @@ def gpt_response(content):
   
   if token_count > 8192:
     return "Your wish is too long."
+
+  time.sleep(3)
+  return "bruh"
 
   response = openai.ChatCompletion.create(
             model=MODEL,

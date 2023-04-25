@@ -6,7 +6,6 @@ $(document).ready(function() {
         let userInput = $('#user_input').val();
 
         $("#response").html("")
-        // $("#your_image").show();
         $("#your_image").attr("src", "/static/assets/img/loading.gif");
 
         $.ajax({
@@ -15,7 +14,6 @@ $(document).ready(function() {
             data: {user_input : userInput},
             success: function(data) {
                 $("#response").html(data.response);
-                // $("#your_image").hide();
                 $("#your_image").attr("src", "/static/assets/img/monkeys_paw.jpg");
                 $("#submit_button").prop("disabled", false);
             },
@@ -51,12 +49,4 @@ $(document).ready(function() {
     });
 });
 
-// async function fetchRemainingRequests() {
-//     const response = await fetch('/get_remaining_requests');
-//     const data = await response.json();
-//     const remainingRequests = data.remaining_requests;
-//     // Update the DOM to display the remaining requests
-//     document.getElementById("remaining-requests").innerText = `Remaining wishes: ${remainingRequests}`;
-// }
-
-// fetchRemainingRequests();
+$("#submit_button").prop("disabled", true);
