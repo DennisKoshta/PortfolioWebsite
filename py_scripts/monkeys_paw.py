@@ -39,11 +39,12 @@ def num_tokens(text, encoding):
 def gpt_response(content, model):
   if not valid_env: return jsonify({"error": "Invalid environment detected, no GPT API key located"}), 400
 
-  encoding = tiktoken.encoding_for_model(model)
-  token_count = num_tokens(content, encoding)
+  # NOT NEEDED SINCE WE SANITIZE INPUT
+  # encoding = tiktoken.encoding_for_model(model)
+  # token_count = num_tokens(content, encoding)
   
-  if token_count > 8192:
-    return "Your wish is too long."
+  # if token_count > 8192:
+  #   return "Your wish is too long."
 
   if environment == "local":
     time.sleep(3)
