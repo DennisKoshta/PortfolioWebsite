@@ -1,7 +1,7 @@
 // Disable so that you can't submit nothing
 $("#submit_button").prop("disabled", true);
 
-processInputRequest("", false);
+processInputRequest("", 0);
 
 $('#user-input-form').on('submit', function (event) {
     // Disable submit button during loading
@@ -20,7 +20,7 @@ $('#user-input-form').on('submit', function (event) {
     // Show the "loading" text
     $("#loading_text").show();
 
-    processInputRequest(userInput, true);
+    processInputRequest(userInput, 1);
 });
 
 $(document).ready(function() {

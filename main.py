@@ -31,7 +31,7 @@ def MonkeysPaw():
 @app.route('/process_input', methods=['POST'])
 def process_input():
     user_input = request.form['user_input']
-    use_api = request.form['use_api']
+    use_api = int(request.form['use_api'])
 
     # Get user IP
     if 'X-Forwarded-For' in request.headers:
@@ -50,13 +50,13 @@ def process_input():
 
     # Check for dev account
     if user_ip=="127.0.0.1" and environment=="local":
+        api_calls = 0
         print(f"user_ip: {user_ip}") 
         print(f"user_api_calls: {api_calls}")
-        api_calls = 0
 
     # Just api_call return
     if not use_api:
-        api_calls -= 1
+        api_calls = max(api_calls-1, 0)
         user_doc_ref.set({'api_calls': api_calls})
         return jsonify(response="None", calls=api_calls)
 
