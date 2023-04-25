@@ -47,8 +47,8 @@ def gpt_response(content):
   if token_count > 8192:
     return "Your wish is too long."
 
-  time.sleep(3)
-  return "bruh"
+  # time.sleep(3)
+  # return "bruh"
 
   response = openai.ChatCompletion.create(
             model=MODEL,
