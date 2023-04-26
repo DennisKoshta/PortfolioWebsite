@@ -118,14 +118,4 @@ function processInputRequest(userInput, use_api) {
             }
         },
     });
-
-    
-
-    // const minInputLength = 2;
-    
-    // if ($('#user_input').val().length >= minInputLength) {
-    //     $("#submit_button").prop("disabled", false);
-    // } else {
-    //     $("#submit_button").prop("disabled", true);
-    // }
 }
