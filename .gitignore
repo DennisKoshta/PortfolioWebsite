@@ -136,3 +136,6 @@ launch_vscode.bat
 
 # Secret JSON stuff
 propane-nomad-267903-800e1214c363.json
+
+# More secrets
+secrets.txt
