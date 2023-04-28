@@ -456,14 +456,14 @@ h3.profile-title {
 .welcome-text h4 {
   margin-top: 20px;
   font-size: 27px;
-  color: rgb(0, 0, 248);
+  color: rgb(40, 40, 248);
 }
 
 .h4-container {
   position: absolute; /* Set the position to absolute */
   bottom: -250px; /* Set the distance from the bottom of the banner-bg */
   left: 10%; /* Move the container to the center of the banner-bg */
-  transform: translateX(-50%); /* Adjust the position to be perfectly in the center */
+  transform: translateX(-45%); /* Adjust the position to be perfectly in the center */
   z-index: 4; /* Set the z-index to make sure it's above the banner-overlay */
 }
 
