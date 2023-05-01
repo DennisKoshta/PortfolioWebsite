@@ -93,9 +93,7 @@
     <!-- MAIN CONTENT -->
     <div class="main-content">
         <div class="fluid-container">
-
             <div class="content-wrapper">
-            
                 <!-- ABOUT -->
                 <div class="page-section" id="about">
                 <div class="row">
@@ -222,7 +220,7 @@
                             </div>
                         </a>
                     </div>
-                </div> <!-- .projects-holder -->
+                </div> 
                 </div>
                 <hr>
 
@@ -268,22 +266,20 @@
                             <textarea type="text" name="message" id="message" cols="30" rows="6" placeholder="Leave your message..."></textarea>
                         </fieldset>
 
-                        <!-- <div class="captcha">{{ recaptcha }}</div> -->
                         <input type="hidden" id="captchaResponse" name="g-recaptcha-response">
-                        <!-- <div class="g-recaptcha" data-sitekey="6LePEsMgAAAAAB_96g52ZGYM7YR97GWcy05rqVp4"></div> -->
 
                         <fieldset class="col-md-12 col-sm-12">
                             <input type="submit" class="button big default" value="Submit">
                         </fieldset>
                         
                     </form>
-                </div> <!-- .contact-form -->
+                </div>
                 </div>
                 <hr>
 
                 <div class="row" id="footer">
                     <div class="col-md-12 text-center">
-                        <p class="copyright-text">Copyright &copy; 2022 Dennis Koshta</p>
+                        <p class="copyright-text">Copyright &copy; 2023 DennisKoshta.com</p>
                     </div>
                 </div>
 
@@ -297,8 +293,10 @@
     <script src="/static/js/min/main.min.js"></script>
 
     <script>
+        const catcha_api_key = process.env.catcha_api_key;
+
         grecaptcha.ready(function() {
-            grecaptcha.execute('6LeeUMMgAAAAAGjd6JYnDJQrtY6_vHySUZXetYB9', {action: 'homepage'})
+            grecaptcha.execute(catcha_api_key, {action: 'homepage'})
             .then(function(token) {
                 document.getElementById('captchaResponse').value = token;
             });
