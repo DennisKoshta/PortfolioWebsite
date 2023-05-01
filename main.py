@@ -6,7 +6,15 @@ import os
 from google.cloud import firestore
 
 environment = os.environ.get("ENVIRONMENT")
-captcha_api_key = os.environ.get("CAPTCHA_API_KEY")
+
+# Set captcha API key
+valid_env = True
+if environment == "local":
+    captcha_api_key = os.environ.get('CAPTCHA_API_KEY')
+elif environment == "production":
+    captcha_api_key = monkeys_paw.get_secret("captcha_api_key")
+else:
+    valid_env = False
 
 app = Flask(__name__)
 
