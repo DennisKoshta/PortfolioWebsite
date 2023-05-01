@@ -293,10 +293,10 @@
     <script src="/static/js/min/main.min.js"></script>
 
     <script>
-        const catcha_api_key = process.env.catcha_api_key;
+        const captcha_api_key = "{{ captcha_api_key }}";
 
         grecaptcha.ready(function() {
-            grecaptcha.execute(catcha_api_key, {action: 'homepage'})
+            grecaptcha.execute(captcha_api_key, {action: 'homepage'})
             .then(function(token) {
                 document.getElementById('captchaResponse').value = token;
             });

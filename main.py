@@ -6,7 +6,7 @@ import os
 from google.cloud import firestore
 
 environment = os.environ.get("ENVIRONMENT")
-captcha_api_key = os.environ.get("captcha_api_key")
+captcha_api_key = os.environ.get("CAPTCHA_API_KEY")
 
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ db = firestore.Client()
 
 @app.route("/")
 def index():
-    return render_template('index.html')   
+    return render_template('index.html', captcha_api_key=captcha_api_key)   
 
 @app.route('/MotionTracking')
 def MotionTracking():
