@@ -69,6 +69,13 @@ def process_input():
         model = "gpt-3.5-turbo"
 
     response = monkeys_paw.gpt_response(f"I wish {user_input}", model)
+
+    # Store IP-address/timestamp pair for every GPT request in the Firestore database
+    from datetime import datetime # Add this import at the beginning of the file
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    ip_timestamp_data = {'ip_address': user_ip, 'timestamp': timestamp}
+    db.collection('gpt_requests').add(ip_timestamp_data)  # Change 'gpt_requests' to the desired collection name
+
     return jsonify(response=response, calls=api_calls)
 
 # DEVELOPER CONSOLE DEBUG MESSAGE LOGGING (paste JS to desired html file and uncomment python)
