@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextTask</title>
+    <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Google Sign-In -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="393617966304-43aikjuectcee0lfb7b8m2rcqnjdg7m9.apps.googleusercontent.com">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- Google Login Button -->
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <!-- Add Task Form -->
+    <form id="add-task-form" class="mt-3">
+        <input type="text" name="title" placeholder="Title" maxlength="100" required class="form-control">
+        <textarea name="description" placeholder="Description" maxlength="1000" required class="form-control mt-2"></textarea>
+        <input type="datetime-local" name="due_date" required class="form-control mt-2">
+        <button type="submit" class="btn btn-primary mt-2">Add Task</button>
+    </form>
+
+    <!-- Display Next Task -->
+    <div id="next-task" class="mt-3"></div>
+
+    <!-- Add required JavaScript for functionality -->
+    <script src="/static/js/NextTask.js"></script>
+</body>
+</html>

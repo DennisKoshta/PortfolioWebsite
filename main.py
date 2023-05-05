@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, Response, jsonify, g
 from py_scripts import monkeys_paw
 import requests
 import os
-# from collections import defaultdict
 from google.cloud import firestore
 
 environment = os.environ.get("ENVIRONMENT")
@@ -87,6 +86,10 @@ def process_input():
 
     return jsonify(response=response, calls=api_calls)
 
+@app.route('/NextTask')
+def NextTask():
+    return render_template('NextTask.html')
+    
 # DEVELOPER CONSOLE DEBUG MESSAGE LOGGING (paste JS to desired html file and uncomment python)
 
 # @app.route('/get_messages')
