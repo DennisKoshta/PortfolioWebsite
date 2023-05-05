@@ -8,8 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Google Sign-In -->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="393617966304-43aikjuectcee0lfb7b8m2rcqnjdg7m9.apps.googleusercontent.com">
+    <script src="https://accounts.google.com/gsi/client" async defer data-callback="handleCredentialResponse"></script>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap JS -->
@@ -17,7 +16,11 @@
 </head>
 <body>
     <!-- Google Login Button -->
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div id="g_id_onload"
+        data-client_id="393617966304-43aikjuectcee0lfb7b8m2rcqnjdg7m9.apps.googleusercontent.com"
+        data-auto_prompt="false">
+    </div>
+    <button onclick="handleSignInClick()" class="btn btn-primary">Sign in with Google</button>
 
     <!-- Add Task Form -->
     <form id="add-task-form" class="mt-3">
