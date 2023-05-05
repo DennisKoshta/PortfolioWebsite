@@ -32,13 +32,42 @@ function handleSignInClick() {
 }
 
 function handleCredentialResponse(response) {
-    // Send the response to your server for authentication
     console.log(response.credential);
+    // Send the response to your server for authentication
+    const data = new FormData();
+    data.append("credential", response.credential);
+
+    fetch("/oauth2callback", {
+        method: "POST",
+        body: data
+    })
+    .then(response => {
+        if (response.ok) {
+            // Authentication successful
+            response.json().then(data => {
+                // Update the UI to show the user is logged in
+                const loggedInUser = document.createElement("div");
+                loggedInUser.innerHTML = `Logged in as: ${data.name} (${data.email})`;
+                document.body.prepend(loggedInUser);
+    
+                // Hide the Google Sign-In button
+                const signInButton = document.querySelector(".g-signin2");
+                signInButton.style.display = "none";
+            });
+        } else {
+            // Authentication failed
+            // Show an error message to the user
+            const errorMessage = document.createElement("div");
+            errorMessage.innerHTML = "Authentication failed. Please try again.";
+            errorMessage.style.color = "red";
+            document.body.prepend(errorMessage);
+        }
+    });
 }
 
 // Get the current base URL
-const baseURL = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
-    
+const baseURL = window.location.origin;
+
 // Create the absolute login_uri
 const loginURI = baseURL + '/oauth2callback';
 

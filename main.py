@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, Response, jsonify, g
+from flask_cors import CORS, cross_origin
 from py_scripts import monkeys_paw
 import requests
 import os
@@ -18,6 +19,7 @@ else:
     valid_env = False
 
 app = Flask(__name__)
+CORS(app)
 
 # user_api_calls = defaultdict(int)
 db = firestore.Client()
@@ -93,6 +95,7 @@ def NextTask():
     return render_template('NextTask.html')
 
 @app.route('/oauth2callback', methods=['POST'])
+@cross_origin(origins=['http://localhost', 'https://www.denniskoshta.com'])
 def oauth2callback():
     token = request.form['credential']
     CLIENT_ID = "393617966304-43aikjuectcee0lfb7b8m2rcqnjdg7m9.apps.googleusercontent.com"
@@ -108,11 +111,13 @@ def oauth2callback():
 
         # TODO: Save user information to the database or session and log the user in
 
-        return "Authentication successful", 200
+        # return "Authentication successful", 200
+        return jsonify(name=name, email=email), 200
     except ValueError as e:
         # Invalid token
         print(e)
-        return "Authentication failed", 401
+        # return "Authentication failed", 401
+        return jsonify(), 401
 
 # DEVELOPER CONSOLE DEBUG MESSAGE LOGGING (paste JS to desired html file and uncomment python)
 
