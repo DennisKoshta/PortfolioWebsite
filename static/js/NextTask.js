@@ -5,6 +5,17 @@ flatpickr("#due-date", {
     minuteIncrement: 15, // Set minute increment to 15 minutes
 });
 
+function formatDate(date) {
+    const options = {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+    };
+    return new Intl.DateTimeFormat("en-US", options).format(new Date(date));
+}
+
 document.getElementById("add-task-form").addEventListener("submit", function (event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -52,7 +63,7 @@ function getNextTask() {
     if (nextTask) {
         let timeRemaining = Math.round((new Date(nextTask.due_date) - new Date()) / 60000);
         let descriptionText = nextTask.description ? `<br>Description: ${nextTask.description}` : "";
-        let dueDateText = nextTask.due_date ? `<br>Due Date: ${nextTask.due_date}` : "";
+        let dueDateText = nextTask.due_date ? `<br>Due Date: ${formatDate(nextTask.due_date)}` : ""; // Use formatDate()
         nextTaskDiv.innerHTML = `Next Task: ${nextTask.title}${descriptionText}${dueDateText}<br>
                                  Time Remaining: ${timeRemaining} minutes`;
     } else {
@@ -84,7 +95,7 @@ function displayAllTasks() {
     tasks.forEach((task) => {
         let taskDiv = document.createElement("div");
         let descriptionText = task.description ? `<br><strong>Description:</strong> ${task.description}` : "";
-        let dueDateText = task.due_date ? `<br><strong>Due Date:</strong> ${task.due_date}` : "";
+        let dueDateText = task.due_date ? `<br><strong>Due Date:</strong> ${formatDate(task.due_date)}` : ""; // Use formatDate()
         taskDiv.innerHTML = `<strong>Title:</strong> ${task.title}${descriptionText}${dueDateText}<br>
                              <button class="btn btn-sm btn-danger delete-task" data-title="${task.title}">Delete</button><br><br>`;
         allTasksDiv.appendChild(taskDiv);
