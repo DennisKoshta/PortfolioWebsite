@@ -39,3 +39,11 @@ form#add-task-form textarea {
     padding: 10px;
     font-size: 1.2rem;
 }
+
+#all-tasks-container {
+    max-height: 400px; /* Adjust this value based on your desired container height */
+    overflow-y: auto;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    padding: 10px;
+}

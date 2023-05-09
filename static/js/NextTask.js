@@ -16,7 +16,7 @@ document.getElementById("add-task-form").addEventListener("submit", function (ev
 
     // Check for duplicate tasks with the same title
     if (isTaskDuplicate(task)) {
-        alert("A task with this title already exists. Please choose a different title.");
+        alert("This task already exists. Please choose a different title or description.");
     } else {
         saveTask(task);
         getNextTask();
@@ -26,7 +26,7 @@ document.getElementById("add-task-form").addEventListener("submit", function (ev
 
 function isTaskDuplicate(newTask) {
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    return tasks.some(task => task.title === newTask.title);
+    return tasks.some(task => task.title === newTask.title && task.description === newTask.description);
 }
 
 function saveTask(task) {
@@ -51,9 +51,9 @@ function getNextTask() {
     let nextTaskDiv = document.getElementById("next-task");
     if (nextTask) {
         let timeRemaining = Math.round((new Date(nextTask.due_date) - new Date()) / 60000);
-        nextTaskDiv.innerHTML = `Next Task: ${nextTask.title}<br>
-                                 Description: ${nextTask.description}<br>
-                                 Due Date: ${nextTask.due_date}<br>
+        let descriptionText = nextTask.description ? `<br>Description: ${nextTask.description}` : "";
+        let dueDateText = nextTask.due_date ? `<br>Due Date: ${nextTask.due_date}` : "";
+        nextTaskDiv.innerHTML = `Next Task: ${nextTask.title}${descriptionText}${dueDateText}<br>
                                  Time Remaining: ${timeRemaining} minutes`;
     } else {
         nextTaskDiv.innerHTML = "No tasks available.";
@@ -83,11 +83,27 @@ function displayAllTasks() {
 
     tasks.forEach((task) => {
         let taskDiv = document.createElement("div");
-        taskDiv.innerHTML = `<strong>Title:</strong> ${task.title}<br>
-                             <strong>Description:</strong> ${task.description}<br>
-                             <strong>Due Date:</strong> ${task.due_date}<br><br>`;
+        let descriptionText = task.description ? `<br><strong>Description:</strong> ${task.description}` : "";
+        let dueDateText = task.due_date ? `<br><strong>Due Date:</strong> ${task.due_date}` : "";
+        taskDiv.innerHTML = `<strong>Title:</strong> ${task.title}${descriptionText}${dueDateText}<br>
+                             <button class="btn btn-sm btn-danger delete-task" data-title="${task.title}">Delete</button><br><br>`;
         allTasksDiv.appendChild(taskDiv);
     });
+
+    // Add event listeners for the delete buttons
+    document.querySelectorAll(".delete-task").forEach((button) => {
+        button.addEventListener("click", function () {
+            deleteTask(this.dataset.title);
+            getNextTask();
+            displayAllTasks();
+        });
+    });
+}
+
+function deleteTask(title) {
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks = tasks.filter(task => task.title !== title);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 // Call displayAllTasks on page load to display all tasks immediately
