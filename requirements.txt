@@ -7,3 +7,7 @@ tiktoken
 google-cloud
 google-cloud-secret-manager
 google-cloud-firestore
+
+google-auth==1.27.0
+google-auth-oauthlib==0.4.2
+oauthlib==3.1.0

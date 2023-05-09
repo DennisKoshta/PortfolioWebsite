@@ -1,15 +1,4 @@
-// Google Sign-In callback function
-function onSignIn(googleUser) {
-    // Get user profile information
-    const profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId());
-    console.log('Name: ' + profile.getName());
-    console.log('Email: ' + profile.getEmail());
-
-    // TODO: Save user information to the database or localStorage
-}
-
-// Add Task Form submission handling
+// Save task to the database (using localStorage for now)
 document.getElementById("add-task-form").addEventListener("submit", function (event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -18,58 +7,74 @@ document.getElementById("add-task-form").addEventListener("submit", function (ev
         description: formData.get("description"),
         due_date: new Date(formData.get("due_date")),
     };
-    // Save task to the database (using Firestore, localStorage, or cookies)
+    saveTask(task);
+    getNextTask();
+    displayAllTasks();
 });
 
+function saveTask(task) {
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks.push(task);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
 function getNextTask() {
-// Fetch tasks from the database (using Firestore, localStorage, or cookies)
-// Find the next task based on the due_date
-// Update the "next-task" element with the next task's details
-}
+    // Fetch tasks from the database (using localStorage for now)
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-function handleSignInClick() {
-    google.accounts.id.prompt();
-}
-
-function handleCredentialResponse(response) {
-    console.log(response.credential);
-    // Send the response to your server for authentication
-    const data = new FormData();
-    data.append("credential", response.credential);
-
-    fetch("/oauth2callback", {
-        method: "POST",
-        body: data
-    })
-    .then(response => {
-        if (response.ok) {
-            // Authentication successful
-            response.json().then(data => {
-                // Update the UI to show the user is logged in
-                const loggedInUser = document.createElement("div");
-                loggedInUser.innerHTML = `Logged in as: ${data.name} (${data.email})`;
-                document.body.prepend(loggedInUser);
-    
-                // Hide the Google Sign-In button
-                const signInButton = document.querySelector(".g-signin2");
-                signInButton.style.display = "none";
-            });
-        } else {
-            // Authentication failed
-            // Show an error message to the user
-            const errorMessage = document.createElement("div");
-            errorMessage.innerHTML = "Authentication failed. Please try again.";
-            errorMessage.style.color = "red";
-            document.body.prepend(errorMessage);
+    // Find the next task based on the due_date
+    let nextTask = tasks.reduce((next, task) => {
+        if (!next || new Date(task.due_date) < new Date(next.due_date)) {
+            return task;
         }
+        return next;
+    }, null);
+
+    // Update the "next-task" element with the next task's details
+    let nextTaskDiv = document.getElementById("next-task");
+    if (nextTask) {
+        let timeRemaining = Math.round((new Date(nextTask.due_date) - new Date()) / 60000);
+        nextTaskDiv.innerHTML = `Next Task: ${nextTask.title}<br>
+                                 Description: ${nextTask.description}<br>
+                                 Due Date: ${nextTask.due_date}<br>
+                                 Time Remaining: ${timeRemaining} minutes`;
+    } else {
+        nextTaskDiv.innerHTML = "No tasks available.";
+    }
+}
+
+// Add event listener for the "Clear All Tasks" button
+document.getElementById("clear-all-tasks").addEventListener("click", function () {
+    clearAllTasks();
+    getNextTask();
+    displayAllTasks();
+});
+
+function clearAllTasks() {
+    localStorage.removeItem("tasks");
+}
+
+// Add a new function to display all tasks
+function displayAllTasks() {
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    // Sort tasks by due_date
+    tasks.sort((a, b) => new Date(a.due_date) - new Date(b.due_date));
+
+    let allTasksDiv = document.getElementById("all-tasks");
+    allTasksDiv.innerHTML = "";
+
+    tasks.forEach((task) => {
+        let taskDiv = document.createElement("div");
+        taskDiv.innerHTML = `<strong>Title:</strong> ${task.title}<br>
+                             <strong>Description:</strong> ${task.description}<br>
+                             <strong>Due Date:</strong> ${task.due_date}<br><br>`;
+        allTasksDiv.appendChild(taskDiv);
     });
 }
 
-// Get the current base URL
-const baseURL = window.location.origin;
+// Call displayAllTasks on page load to display all tasks immediately
+displayAllTasks();
 
-// Create the absolute login_uri
-const loginURI = baseURL + '/oauth2callback';
-
-// Set the data-login_uri attribute
-document.getElementById("g_id_onload").setAttribute("data-login_uri", loginURI);
+// Call getNextTask on page load to display the next task immediately
+getNextTask();

@@ -5,22 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NextTask</title>
     <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico"/>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Google Sign-In -->
-    <script src="https://accounts.google.com/gsi/client" async defer data-callback="handleCredentialResponse"></script>
+    <link rel="stylesheet" href="/static/css/templatemo-style.css">
+    <link rel="stylesheet" href="/static/css/NextTask.css">
+
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
 </head>
 <body>
-    <!-- Google Login Button -->
-    <div id="g_id_onload"
-        data-client_id="393617966304-43aikjuectcee0lfb7b8m2rcqnjdg7m9.apps.googleusercontent.com"
-        data-auto_prompt="false">
+    <div class="home-corner">
+        <a href="/" class="home-button">Home</a>
     </div>
-    <button onclick="handleSignInClick()" class="btn btn-primary">Sign in with Google</button>
 
     <!-- Add Task Form -->
     <form id="add-task-form" class="mt-3">
@@ -32,6 +30,12 @@
 
     <!-- Display Next Task -->
     <div id="next-task" class="mt-3"></div>
+
+    <!-- Add Clear All Tasks Button -->
+    <button id="clear-all-tasks" class="btn btn-danger mt-2">Clear All Tasks</button>
+
+    <!-- Display All Tasks -->
+    <div id="all-tasks" class="mt-3"></div>
 
     <!-- Add required JavaScript for functionality -->
     <script src="/static/js/NextTask.js"></script>

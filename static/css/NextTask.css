@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.home-corner {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.home-button {
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+    color: #fff;
+}
+
+form#add-task-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form#add-task-form input,
+form#add-task-form textarea {
+    font-size: 1.1rem;
+}
+
+#next-task {
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+}
