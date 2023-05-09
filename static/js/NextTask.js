@@ -1,16 +1,33 @@
-// Save task to the database (using localStorage for now)
+// Initialize flatpickr for the due date input field
+flatpickr("#due-date", {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    minuteIncrement: 15, // Set minute increment to 15 minutes
+});
+
 document.getElementById("add-task-form").addEventListener("submit", function (event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const task = {
         title: formData.get("title"),
-        description: formData.get("description"),
-        due_date: new Date(formData.get("due_date")),
+        description: formData.get("description") || "", // Make the description field optional
+        due_date: new Date(document.getElementById("due-date").value),
     };
-    saveTask(task);
-    getNextTask();
-    displayAllTasks();
+
+    // Check for duplicate tasks with the same title
+    if (isTaskDuplicate(task)) {
+        alert("A task with this title already exists. Please choose a different title.");
+    } else {
+        saveTask(task);
+        getNextTask();
+        displayAllTasks();
+    }
 });
+
+function isTaskDuplicate(newTask) {
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    return tasks.some(task => task.title === newTask.title);
+}
 
 function saveTask(task) {
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
