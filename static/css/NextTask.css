@@ -2,6 +2,12 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.center-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
 form#add-task-form {
     width: 100%;
     max-width: 500px;
