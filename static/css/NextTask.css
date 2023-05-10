@@ -47,3 +47,9 @@ form#add-task-form textarea {
     border-radius: 5px;
     padding: 10px;
 }
+
+.past-due {
+    background-color: #ffcccc; /* Light red background color */
+    padding: 5px;
+    border-radius: 5px;
+}

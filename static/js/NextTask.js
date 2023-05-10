@@ -16,6 +16,22 @@ function formatDate(date) {
     return new Intl.DateTimeFormat("en-US", options).format(new Date(date));
 }
 
+function formatTimeRemaining(milliseconds) {
+    let seconds = Math.floor(milliseconds / 1000);
+    let days = Math.floor(seconds / 86400);
+    seconds %= 86400;
+    let hours = Math.floor(seconds / 3600);
+    seconds %= 3600;
+    let minutes = Math.floor(seconds / 60);
+
+    let formattedTime = "";
+    if (days) formattedTime += `${days} days `;
+    if (hours) formattedTime += `${hours} hours `;
+    if (minutes) formattedTime += `${minutes} minutes`;
+
+    return formattedTime || "0 minutes";
+}
+
 document.getElementById("add-task-form").addEventListener("submit", function (event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -50,6 +66,9 @@ function getNextTask() {
     // Fetch tasks from the database (using localStorage for now)
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
+    // Filter out tasks that are overdue
+    tasks = tasks.filter(task => new Date(task.due_date) > new Date());
+
     // Find the next task based on the due_date
     let nextTask = tasks.reduce((next, task) => {
         if (!next || new Date(task.due_date) < new Date(next.due_date)) {
@@ -61,11 +80,11 @@ function getNextTask() {
     // Update the "next-task" element with the next task's details
     let nextTaskDiv = document.getElementById("next-task");
     if (nextTask) {
-        let timeRemaining = Math.round((new Date(nextTask.due_date) - new Date()) / 60000);
+        let timeRemaining = new Date(nextTask.due_date) - new Date();
         let descriptionText = nextTask.description ? `<br>Description: ${nextTask.description}` : "";
-        let dueDateText = nextTask.due_date ? `<br>Due Date: ${formatDate(nextTask.due_date)}` : ""; // Use formatDate()
+        let dueDateText = nextTask.due_date ? `<br>Due Date: ${formatDate(nextTask.due_date)}` : "";
         nextTaskDiv.innerHTML = `Next Task: ${nextTask.title}${descriptionText}${dueDateText}<br>
-                                 Time Remaining: ${timeRemaining} minutes`;
+                                 Time Remaining: ${formatTimeRemaining(timeRemaining)}`; // Use formatTimeRemaining()
     } else {
         nextTaskDiv.innerHTML = "No tasks available.";
     }
@@ -94,26 +113,32 @@ function displayAllTasks() {
 
     tasks.forEach((task) => {
         let taskDiv = document.createElement("div");
+
+        // Check if the task is past-due
+        let isPastDue = new Date(task.due_date) < new Date();
+        let pastDueClass = isPastDue ? "past-due" : "";
+
         let descriptionText = task.description ? `<br><strong>Description:</strong> ${task.description}` : "";
-        let dueDateText = task.due_date ? `<br><strong>Due Date:</strong> ${formatDate(task.due_date)}` : ""; // Use formatDate()
-        taskDiv.innerHTML = `<strong>Title:</strong> ${task.title}${descriptionText}${dueDateText}<br>
-                             <button class="btn btn-sm btn-danger delete-task" data-title="${task.title}">Delete</button><br><br>`;
+        let dueDateText = task.due_date ? `<br><strong>Due Date:</strong> ${formatDate(task.due_date)}` : "";
+          // Pass both the title and description to the deleteTask() function
+        taskDiv.innerHTML = `<div class="${pastDueClass}"><strong>Title:</strong> ${task.title}${descriptionText}${dueDateText}<br>
+                             <button class="btn btn-sm btn-danger delete-task" data-title="${task.title}" data-description="${task.description}">Delete</button></div><br>`;
         allTasksDiv.appendChild(taskDiv);
     });
 
     // Add event listeners for the delete buttons
     document.querySelectorAll(".delete-task").forEach((button) => {
         button.addEventListener("click", function () {
-            deleteTask(this.dataset.title);
+            deleteTask(this.dataset.title, this.dataset.description);
             getNextTask();
             displayAllTasks();
         });
     });
 }
 
-function deleteTask(title) {
+function deleteTask(title, description) {
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    tasks = tasks.filter(task => task.title !== title);
+    tasks = tasks.filter(task => task.title !== title || task.description !== description);
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
