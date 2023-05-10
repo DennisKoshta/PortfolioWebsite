@@ -147,6 +147,15 @@ function deleteTask(title, description) {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
+// Add event listener for the "Toggle All Tasks" button
+document.getElementById("toggle-all-tasks").addEventListener("click", function () {
+    const allTasksContent = document.getElementById("all-tasks-content");
+    allTasksContent.classList.toggle("hidden");
+});
+
+const allTasksContent = document.getElementById("all-tasks-content");
+allTasksContent.classList.toggle("hidden");
+
 // Call displayAllTasks on page load to display all tasks immediately
 displayAllTasks();
 
