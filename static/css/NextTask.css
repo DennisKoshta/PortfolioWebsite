@@ -2,26 +2,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.home-corner {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-.home-button {
-    text-decoration: none;
-    background-color: #007bff;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.home-button:hover {
-    background-color: #0056b3;
-    text-decoration: none;
-    color: #fff;
-}
-
 form#add-task-form {
     width: 100%;
     max-width: 500px;
@@ -41,7 +21,7 @@ form#add-task-form textarea {
 }
 
 #all-tasks-container {
-    max-height: 400px; /* Adjust this value based on your desired container height */
+    max-height: 550px; /* Adjust this value based on your desired container height */
     overflow-y: auto;
     border: 1px solid #007bff;
     border-radius: 5px;

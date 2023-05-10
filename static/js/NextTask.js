@@ -114,12 +114,17 @@ function displayAllTasks() {
     tasks.forEach((task) => {
         let taskDiv = document.createElement("div");
 
-        // Check if the task is past-due
-        let isPastDue = new Date(task.due_date) < new Date();
+        // Check if the task is past-due and has a due date
+        let isPastDue = task.due_date && new Date(task.due_date) < new Date();
         let pastDueClass = isPastDue ? "past-due" : "";
 
+        // Modify the dueDateText to display "No date set" if there's no date
+        let dueDateText = task.due_date
+            ? `<br><strong>Due Date:</strong> ${formatDate(task.due_date)}`
+            : "<br><strong>Due Date:</strong> No date set";
+
         let descriptionText = task.description ? `<br><strong>Description:</strong> ${task.description}` : "";
-        let dueDateText = task.due_date ? `<br><strong>Due Date:</strong> ${formatDate(task.due_date)}` : "";
+
           // Pass both the title and description to the deleteTask() function
         taskDiv.innerHTML = `<div class="${pastDueClass}"><strong>Title:</strong> ${task.title}${descriptionText}${dueDateText}<br>
                              <button class="btn btn-sm btn-danger delete-task" data-title="${task.title}" data-description="${task.description}">Delete</button></div><br>`;
