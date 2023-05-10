@@ -63,28 +63,29 @@ function saveTask(task) {
 }
 
 function getNextTask() {
-    // Fetch tasks from the database (using localStorage for now)
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-    // Filter out tasks that are overdue
-    tasks = tasks.filter(task => new Date(task.due_date) > new Date());
+    // Separate tasks with and without due dates
+    let tasksWithDates = tasks.filter(task => new Date(task.due_date) > new Date());
+    let tasksWithoutDates = tasks.filter(task => !task.due_date);
 
-    // Find the next task based on the due_date
-    let nextTask = tasks.reduce((next, task) => {
+    // Find the next task based on the due_date among tasksWithDates
+    let nextTaskWithDate = tasksWithDates.reduce((next, task) => {
         if (!next || new Date(task.due_date) < new Date(next.due_date)) {
             return task;
         }
         return next;
     }, null);
 
-    // Update the "next-task" element with the next task's details
+    // Give priority to tasks without due dates
+    let nextTask = tasksWithoutDates.length > 0 ? tasksWithoutDates[0] : nextTaskWithDate;
+
     let nextTaskDiv = document.getElementById("next-task");
     if (nextTask) {
-        let timeRemaining = new Date(nextTask.due_date) - new Date();
         let descriptionText = nextTask.description ? `<br>Description: ${nextTask.description}` : "";
         let dueDateText = nextTask.due_date ? `<br>Due Date: ${formatDate(nextTask.due_date)}` : "";
-        nextTaskDiv.innerHTML = `Next Task: ${nextTask.title}${descriptionText}${dueDateText}<br>
-                                 Time Remaining: ${formatTimeRemaining(timeRemaining)}`; // Use formatTimeRemaining()
+        let timeRemaining = nextTask.due_date ? `<br>Time Remaining: ${formatTimeRemaining(new Date(nextTask.due_date) - new Date())}` : "";
+        nextTaskDiv.innerHTML = `Next Task: ${nextTask.title}${descriptionText}${dueDateText}${timeRemaining}`; // Use formatTimeRemaining() conditionally
     } else {
         nextTaskDiv.innerHTML = "No tasks available.";
     }
@@ -147,14 +148,14 @@ function deleteTask(title, description) {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-// Add event listener for the "Toggle All Tasks" button
-document.getElementById("toggle-all-tasks").addEventListener("click", function () {
+// Add event listener for the "Toggle All Tasks" switch
+document.getElementById("toggle-all-tasks").addEventListener("change", function () {
     const allTasksContent = document.getElementById("all-tasks-content");
     allTasksContent.classList.toggle("hidden");
 });
 
-const allTasksContent = document.getElementById("all-tasks-content");
-allTasksContent.classList.toggle("hidden");
+// Call this line to initialize the visibility state of all tasks
+document.getElementById("all-tasks-content").classList.add("hidden");
 
 // Call displayAllTasks on page load to display all tasks immediately
 displayAllTasks();
