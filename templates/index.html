@@ -147,7 +147,7 @@
                         <div class="col-md-4 col-sm-6">
                             <a href="static/assets/downloadable/Sixdegrees.zip" onclick="return confirmDownload()">
                                 <div class="project-item">
-                                    <img src="/static/assets/img/six_degrees.png" alt="">
+                                    <img src="/static/assets/img/six_degrees_example.png" alt="">
                                     <div class="project-hover">
                                             <div class="inside">       
                                                 <h5>Six Degrees of Kevin Bacon</h5>
@@ -185,7 +185,7 @@
                     <div class="col-md-4 col-sm-6">
                         <a href="{{ url_for('MonkeysPaw') }}">
                             <div class="project-item">
-                                <img src="/static/assets/img/monkeys_paw.jpg" alt="">
+                                <img src="/static/assets/img/monkeys_paw_example.jpg" alt="">
                                 <div class="project-hover">
                                         <div class="inside">
                                             <h5>The Monkey's Paw</h5>
@@ -204,7 +204,7 @@
                     <div class="col-md-4 col-sm-6">
                         <a href="static/assets/downloadable/multithreaded_HTTP_server.zip" onclick="return confirmDownload()">
                             <div class="project-item">
-                                <img src="/static/assets/img/server.png" alt="">
+                                <img src="/static/assets/img/server_example.png" alt="">
                                 <div class="project-hover">
                                         <div class="inside">   
                                             <h5>Multithreaded HTTP Server</h5>
@@ -221,11 +221,30 @@
                         </a>
                     </div>
 
+                    <div class="col-md-4 col-sm-6">
+                        <a href="https://github.com/NeuroTechSC/neurotechML">
+                            <div class="project-item">
+                                <img src="/static/assets/img/neurotech_example.png" alt="">
+                                <div class="project-hover">
+                                        <div class="inside">
+                                            <h5>Phoneme Recognition from sEMG Signals</h5>
+                                            <p>This is a Github repository for the Machine Learning and Data team of the NeuroTechSC organization. 
+                                                The main goal of this project is to detect subvocal phonemes from surface Electromyography (sEMG) data using a Deep Neural Network model implemented in Python. 
+                                                The linked repository provides the Python notebooks for the sEMG data preprocessing and various model trainings, 
+                                                as well as data and additonal information/files necessary for context.
+                                                Currently in the process of expanding to more phoneme classes, currently achieving ~100% test accuracy on 5 phonemes + silence.
+                                                Uses Pandas for data proceesing and Tensorflow/Keras to implement an RNN/LSTM model.</p>
+                                        </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
 
                     <!-- <div class="col-md-4 col-sm-6">
                         <a href="{{ url_for('NextTask') }}">
                             <div class="project-item">
-                                <img src="/static/assets/img/monkeys_paw.jpg" alt="">
+                                <img src="/static/assets/img/monkeys_paw_example.jpg" alt="">
                                 <div class="project-hover">
                                         <div class="inside">
                                             <h5>NextTask</h5>
