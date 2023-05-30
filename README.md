@@ -9,12 +9,12 @@ Welcome to my portfolio website's Git repository! This repository contains the s
 ## Contents
 
 1. [Flask Web Application](#flask-web-application)
-2. [Project: Hand Motion Tracking](#hand-motion-tracking)
-3. [Project: Actor Degrees of Separation](#actor-degrees-of-separation)
-4. [Project: JavaScript Drawing Canvas](#javascript-drawing-canvas)
-5. [Project: Monkey's Paw Wish Generator](#monkey's-paw-wish-generator)
-6. [Project: Multi-threaded HTTP Server](#multi-threaded-http-server)
-7. [Project: Subvocal Phoneme Detection](#subvocal-phoneme-detection)
+2. Project: [Hand Motion Tracking](#hand-motion-tracking)
+3. Project: [Actor Degrees of Separation](#actor-degrees-of-separation)
+4. Project: [JavaScript Drawing Canvas](#javascript-drawing-canvas)
+5. Project: [Monkey's Paw Wish Generator](#monkey's-paw-wish-generator)
+6. Project: [Multi-threaded HTTP Server](#multi-threaded-http-server)
+7. Project: [Subvocal Phoneme Detection](#subvocal-phoneme-detection)
 8. [Google Cloud (gcloud) Hosting](#google-cloud-hosting)
 
 ## 1. <a id="flask-web-application" style="color: inherit; text-decoration: none;">Flask Web Application</a>
