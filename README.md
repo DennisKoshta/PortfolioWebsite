@@ -184,10 +184,6 @@ This project's main goal is to detect subvocal phonemes from surface Electromyog
 - gtp_convos/gpt_convo_2.md
 - data/
 
-### Potential Applications
-
-Detecting subvocal phonemes has various applications, including silent communication devices and assistive technologies for individuals with speech impairments.
-
 ## 8. <a id="google-cloud-hosting" style="color: inherit; text-decoration: none;">Google Cloud (gcloud) Hosting</a>
 
 Google Cloud Platform (GCP) offers a variety of services for hosting and managing web applications. In this project, I have used GCP's App Engine to deploy and host my portfolio website, providing a scalable and reliable hosting solution that provides a custom domain and SSL security for an HTTPS connection.
