@@ -14,7 +14,7 @@ Welcome to my portfolio website's Git repository! This repository contains the s
 4. Project: [JavaScript Drawing Canvas](#javascript-drawing-canvas)
 5. Project: [Monkey's Paw Wish Generator](#monkey's-paw-wish-generator)
 6. Project: [Multi-threaded HTTP Server](#multi-threaded-http-server)
-7. Project: [Subvocal Phoneme Detection](#subvocal-phoneme-detection)
+7. Project: [Phoneme Recognition from sEMG Signals](#phoneme-recognition)
 8. [Google Cloud (gcloud) Hosting](#google-cloud-hosting)
 
 ## 1. <a id="flask-web-application" style="color: inherit; text-decoration: none;">Flask Web Application</a>
@@ -154,9 +154,9 @@ This project uses C to implement a simple multi-threaded HTTP server that serves
 
 - static\assets\MultiThreadedHTTPServer.zip
 
-## 7. <a id="subvocal-phoneme-detection" style="color: inherit; text-decoration: none;">Subvocal Phoneme Detection</a>
+## 7. <a id="phoneme-recognition" style="color: inherit; text-decoration: none;">Phoneme Recognition from sEMG Signals</a>
 
-This project's main goal is to detect subvocal phonemes from surface Electromyography (sEMG) data using a Deep Neural Network model implemented in Python. The repository provides Python notebooks for the sEMG data preprocessing and model training.
+This project's main goal is to detect phonemes from surface Electromyography (sEMG) data using a Deep Neural Network model implemented in Python. The repository provides Python notebooks for the sEMG data preprocessing and model training.
 
 ### Link
 
@@ -164,7 +164,7 @@ This project's main goal is to detect subvocal phonemes from surface Electromyog
 
 ### Features
 
-- Detects subvocal phonemes from sEMG data
+- Detects phonemes from sEMG data
 - Achieved near 100% test accuracy on 5 phonemes with ~155,000 parameters using LSTM/RNN architecture
 - Real-time transcription potential
 
