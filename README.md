@@ -8,16 +8,16 @@ Welcome to my portfolio website's Git repository! This repository contains the s
 
 ## Contents
 
-1. [Flask Web Application](#flask-web-application)
-2. Project: [Hand Motion Tracking](#hand-motion-tracking)
-3. Project: [Actor Degrees of Separation](#actor-degrees-of-separation)
-4. Project: [JavaScript Drawing Canvas](#javascript-drawing-canvas)
-5. Project: [Monkey's Paw Wish Generator](#monkey's-paw-wish-generator)
-6. Project: [Multi-threaded HTTP Server](#multi-threaded-http-server)
-7. Project: [Phoneme Recognition from sEMG Signals](#phoneme-recognition)
-8. [Google Cloud (gcloud) Hosting](#google-cloud-hosting)
+- [Flask Web Application](#flask-web-application)
+- Project: [Hand Motion Tracking](#hand-motion-tracking)
+- Project: [Actor Degrees of Separation](#actor-degrees-of-separation)
+- Project: [JavaScript Drawing Canvas](#javascript-drawing-canvas)
+- Project: [Monkey's Paw Wish Generator](#monkey's-paw-wish-generator)
+- Project: [Multi-threaded HTTP Server](#multi-threaded-http-server)
+- Project: [Phoneme Recognition from sEMG Signals](#phoneme-recognition)
+- [Google Cloud (gcloud) Hosting](#google-cloud-hosting)
 
-## 1. <a id="flask-web-application" style="color: inherit; text-decoration: none;">Flask Web Application</a>
+## <a id="flask-web-application" style="color: inherit; text-decoration: none;">Flask Web Application</a>
 
 Flask is a lightweight Python web framework that allows for quick and easy development of web applications. In this project, I have utilized Flask to create the backend of my portfolio website, handling the routing and serving of pages.
 
@@ -38,7 +38,7 @@ Flask is a lightweight Python web framework that allows for quick and easy devel
 - app.yaml
 - templates\index.html
 
-## 2. <a id="hand-motion-tracking" style="color: inherit; text-decoration: none;">Hand Motion Tracking</a>
+## <a id="hand-motion-tracking" style="color: inherit; text-decoration: none;">Hand Motion Tracking</a>
 
 This project utilizes the MediaPipe NodeJS package to track and graphically visualize your hands and fingers using your webcam. It's an interesting way to explore computer vision and machine learning capabilities.
 
@@ -61,7 +61,7 @@ This project utilizes the MediaPipe NodeJS package to track and graphically visu
 - static\js\MotionTracking.js
 - static\assets\img\motion_tracking_example.png
 
-## 3. <a id="actor-degrees-of-separation" style="color: inherit; text-decoration: none;">Actor Degrees of Separation</a>
+## <a id="actor-degrees-of-separation" style="color: inherit; text-decoration: none;">Actor Degrees of Separation</a>
 
 This C++ program computes the shortest path between two actors in terms of degrees of separation using their movie appearances as connections. The program takes a formatted input text file containing actor pairs and outputs the corresponding movie/actor connections in a separate output file. The C++ code is optimized using an adjacency list data structure and BFS to find the shortest path efficiently.
 
@@ -81,7 +81,7 @@ This C++ program computes the shortest path between two actors in terms of degre
 
 - static\assets\Sixdegrees.zip
 
-## 4. <a id="javascript-drawing-canvas" style="color: inherit; text-decoration: none;">JavaScript Drawing Canvas</a>
+## <a id="javascript-drawing-canvas" style="color: inherit; text-decoration: none;">JavaScript Drawing Canvas</a>
 
 A simple canvas to draw and create whatever you desire. This project is made using JavaScript and allows users to unleash their creativity on the web.
 
@@ -104,7 +104,7 @@ A simple canvas to draw and create whatever you desire. This project is made usi
 - static\js\ArtCanvas.js
 - static\assets\img\fractal_example.png
 
-## 5. <a id="monkey's-paw-wish-generator" style="color: inherit; text-decoration: none;">Monkey's Paw Wish Generator</a>
+## <a id="monkey's-paw-wish-generator" style="color: inherit; text-decoration: none;">Monkey's Paw Wish Generator</a>
 
 The Monkey's Paw is an interactive web application that generates unexpected outcomes for user-submitted wishes. This project utilizes the OpenAI GPT API to generate the responses, and Flask for the backend server.
 
@@ -131,7 +131,7 @@ The Monkey's Paw is an interactive web application that generates unexpected out
 - static\js\MonkeysPaw.js
 - static\assets\img\monkeys_paw.png
 
-## 6. <a id="multi-threaded-http-server" style="color: inherit; text-decoration: none;">Multi-threaded HTTP Server</a>
+## <a id="multi-threaded-http-server" style="color: inherit; text-decoration: none;">Multi-threaded HTTP Server</a>
 
 This project uses C to implement a simple multi-threaded HTTP server that serves multiple clients simultaneously using a thread-safe queue. The server ensures that its responses conform to a coherent and atomic linearization of the client requests and creates an audit log to identify the linearization. It uses the Pthreads library and supports GET/PUT methods.
 
@@ -154,7 +154,7 @@ This project uses C to implement a simple multi-threaded HTTP server that serves
 
 - static\assets\MultiThreadedHTTPServer.zip
 
-## 7. <a id="phoneme-recognition" style="color: inherit; text-decoration: none;">Phoneme Recognition from sEMG Signals</a>
+## <a id="phoneme-recognition" style="color: inherit; text-decoration: none;">Phoneme Recognition from sEMG Signals</a>
 
 This project's main goal is to detect phonemes from surface Electromyography (sEMG) data using a Deep Neural Network model implemented in Python. The repository provides Python notebooks for the sEMG data preprocessing and model training.
 
@@ -184,7 +184,7 @@ This project's main goal is to detect phonemes from surface Electromyography (sE
 - gtp_convos/gpt_convo_2.md
 - data/
 
-## 8. <a id="google-cloud-hosting" style="color: inherit; text-decoration: none;">Google Cloud (gcloud) Hosting</a>
+## <a id="google-cloud-hosting" style="color: inherit; text-decoration: none;">Google Cloud (gcloud) Hosting</a>
 
 Google Cloud Platform (GCP) offers a variety of services for hosting and managing web applications. In this project, I have used GCP's App Engine to deploy and host my portfolio website, providing a scalable and reliable hosting solution that provides a custom domain and SSL security for an HTTPS connection.
 
