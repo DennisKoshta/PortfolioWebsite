@@ -14,7 +14,8 @@ Welcome to my portfolio website's Git repository! This repository contains the s
 4. [Project: JavaScript Drawing Canvas](#javascript-drawing-canvas)
 5. [Project: Monkey's Paw Wish Generator](#monkey's-paw-wish-generator)
 6. [Project: Multi-threaded HTTP Server](#multi-threaded-http-server)
-7. [Google Cloud (gcloud) Hosting](#google-cloud-hosting)
+7. [Subvocal Phoneme Detection](#subvocal-phoneme-detection)
+8. [Google Cloud (gcloud) Hosting](#google-cloud-hosting)
 
 ## 1. <a id="flask-web-application" style="color: inherit; text-decoration: none;">Flask Web Application</a>
 
@@ -153,7 +154,41 @@ This project uses C to implement a simple multi-threaded HTTP server that serves
 
 - static\assets\MultiThreadedHTTPServer.zip
 
-## 7. <a id="google-cloud-hosting" style="color: inherit; text-decoration: none;">Google Cloud (gcloud) Hosting</a>
+## 7. <a id="subvocal-phoneme-detection" style="color: inherit; text-decoration: none;">Subvocal Phoneme Detection</a>
+
+This project's main goal is to detect subvocal phonemes from surface Electromyography (sEMG) data using a Deep Neural Network model implemented in Python. The repository provides Python notebooks for the sEMG data preprocessing and model training.
+
+### Link
+
+[NeuroTechSC - Machine Learning](https://github.com/NeuroTechSC/neurotechML)
+
+### Features
+
+- Detects subvocal phonemes from sEMG data
+- Achieved near 100% test accuracy on 5 phonemes with ~155,000 parameters using LSTM/RNN architecture
+- Real-time transcription potential
+
+### Technologies Used
+
+- Python
+- TensorFlow
+- Keras
+- Scikit-learn
+- OpenBCI
+
+### Files
+
+- LSTM_RNN.ipynb
+- EMG_Data_Processing.ipynb
+- gtp_convos/gpt_convo.md
+- gtp_convos/gpt_convo_2.md
+- data/
+
+### Potential Applications
+
+Detecting subvocal phonemes has various applications, including silent communication devices and assistive technologies for individuals with speech impairments.
+
+## 8. <a id="google-cloud-hosting" style="color: inherit; text-decoration: none;">Google Cloud (gcloud) Hosting</a>
 
 Google Cloud Platform (GCP) offers a variety of services for hosting and managing web applications. In this project, I have used GCP's App Engine to deploy and host my portfolio website, providing a scalable and reliable hosting solution that provides a custom domain and SSL security for an HTTPS connection.
 
